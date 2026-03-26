@@ -200,7 +200,7 @@
 
     <script>
         let allQuestionsGlobal = [];
-        let categorizedQuestions = { "A": [], "B": [], "C": [], "D": [] };
+        let categorizedQuestions = { "A": [], "B": [], "C": [], "D": [], "Dodatkowe": [] };
         let currentQuiz = [];
         let currentIdx = 0;
         let score = 0;
@@ -215,35 +215,43 @@
                 const results = await Promise.all(files.map(f => fetch(f).then(r => r.json())));
 
                 results.forEach(data => {
-                    // Przeszukujemy wszystkie klucze w pliku JSON
                     for (const [key, value] of Object.entries(data)) {
-                        let questions = [];
-
-                        // Wyciąganie pytań z różnych struktur (tablica lub obiekt)
-                        if (Array.isArray(value)) {
-                            questions = value;
-                        } else if (typeof value === 'object') {
-                            // Jeśli kluczami są np. "Pytania 21-30", zbieramy ich zawartość
-                            Object.values(value).forEach(qList => questions.push(...qList));
+                        // Jeśli klucz to zakres (np. "Pytania 21-30"), wejdź głębiej
+                        if (!Array.isArray(value) && typeof value === 'object') {
+                            for (const [subKey, subQuestions] of Object.entries(value)) {
+                                processQuestions(subKey, subQuestions);
+                            }
+                        } else if (Array.isArray(value)) {
+                            processQuestions(key, value);
                         }
-
-                        // Przypisanie do kategorii na podstawie nazwy klucza
-                        const upperKey = key.toUpperCase();
-                        if (upperKey.includes('A')) categorizedQuestions["A"].push(...questions);
-                        else if (upperKey.includes('B')) categorizedQuestions["B"].push(...questions);
-                        else if (upperKey.includes('C')) categorizedQuestions["C"].push(...questions);
-                        else if (upperKey.includes('D')) categorizedQuestions["D"].push(...questions);
-
-                        allQuestionsGlobal.push(...questions);
                     }
                 });
 
                 renderMenu();
                 statusMsg.innerText = "Wybierz zestaw (10 pytań) lub wygeneruj test losowy.";
             } catch (e) {
-                statusMsg.innerText = "Błąd krytyczny: Sprawdź nazwy plików JSON lub konsolę przeglądarki.";
+                statusMsg.innerText = "Błąd ładowania danych. Sprawdź pliki JSON.";
                 console.error(e);
             }
+        }
+
+        function processQuestions(name, list) {
+            const n = name.toUpperCase();
+            // Precyzyjne przypisanie do kategorii
+            if (n.includes('DODATKOWE')) {
+                categorizedQuestions["Dodatkowe"].push(...list);
+            } else if (n.includes('ZBIÓR A') || (n.includes('A') && !n.includes('ZBIÓR'))) {
+                // Dodatkowy warunek, aby uniknąć łapania słowa "Pytania" jako "A"
+                if (n.includes('ZBIÓR A') || n === 'A') categorizedQuestions["A"].push(...list);
+                else if (n.includes('ZBIÓR B') || n === 'B') categorizedQuestions["B"].push(...list);
+                else if (n.includes('ZBIÓR C') || n === 'C') categorizedQuestions["C"].push(...list);
+                else if (n.includes('ZBIÓR D') || n === 'D') categorizedQuestions["D"].push(...list);
+            } else if (n.includes('ZBIÓR B')) categorizedQuestions["B"].push(...list);
+            else if (n.includes('ZBIÓR C')) categorizedQuestions["C"].push(...list);
+            else if (n.includes('ZBIÓR D')) categorizedQuestions["D"].push(...list);
+
+            // Unikanie duplikatów w bazie globalnej (opcjonalnie, zależy od danych)
+            allQuestionsGlobal.push(...list);
         }
 
         function renderMenu() {
@@ -251,30 +259,33 @@
             grid.innerHTML = '';
 
             // Przycisk LOSOWE 10
-            if (allQuestionsGlobal.length > 0) {
-                const randomCard = document.createElement('div');
-                randomCard.className = 'set-card random-card';
-                randomCard.innerHTML = `<h3>🎲 Losowe 10</h3><p style="font-size:0.8rem; color:var(--muted)">Mix z całej bazy</p>`;
-                randomCard.onclick = () => {
-                    const shuffled = [...allQuestionsGlobal].sort(() => 0.5 - Math.random());
-                    startQuiz("Losowe 10 Pytań", shuffled.slice(0, 10));
-                };
-                grid.appendChild(randomCard);
-            }
+            const randomCard = document.createElement('div');
+            randomCard.className = 'set-card random-card';
+            randomCard.innerHTML = `<h3>🎲 Losowe 10</h3><p style="font-size:0.8rem; color:var(--muted)">Mix z całej bazy</p>`;
+            randomCard.onclick = () => {
+                const shuffled = [...allQuestionsGlobal].sort(() => 0.5 - Math.random());
+                startQuiz("Losowe 10 Pytań", shuffled.slice(0, 10));
+            };
+            grid.appendChild(randomCard);
 
-            // Generowanie zestawów po 10 pytań dla każdej litery
-            ["A", "B", "C", "D"].forEach(letter => {
+            // Generowanie zestawów po 10 pytań
+            const order = ["A", "B", "C", "D", "Dodatkowe"];
+            order.forEach(letter => {
                 const qs = categorizedQuestions[letter];
-                if (qs.length === 0) return;
+                if (!qs || qs.length === 0) return;
 
-                for (let i = 0; i < qs.length; i += 10) {
-                    const chunk = qs.slice(i, i + 10);
+                // Usuwanie ewentualnych duplikatów pytań w obrębie zbioru (po treści pytania)
+                const uniqueQs = Array.from(new Map(qs.map(q => [q.question, q])).values());
+
+                for (let i = 0; i < uniqueQs.length; i += 10) {
+                    const chunk = uniqueQs.slice(i, i + 10);
                     const range = `${i + 1}-${i + chunk.length}`;
+                    const label = letter === "Dodatkowe" ? "Dodatkowe" : `Zbiór ${letter}`;
 
                     const card = document.createElement('div');
                     card.className = 'set-card';
-                    card.innerHTML = `<h3>Zestaw ${letter} ${range}</h3>`;
-                    card.onclick = () => startQuiz(`Zestaw ${letter} (${range})`, chunk);
+                    card.innerHTML = `<h3>${label}</h3><p style="font-size:0.85rem; color:var(--muted)">Pytania ${range}</p>`;
+                    card.onclick = () => startQuiz(`Zestaw ${label} (${range})`, chunk);
                     grid.appendChild(card);
                 }
             });
