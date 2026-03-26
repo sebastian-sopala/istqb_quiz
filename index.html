@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platforma Quizowa ISTQB - Trening 10 Pytań</title>
+    <title>Platforma Quizowa ISTQB - Kompletny Trening</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -36,7 +36,7 @@
 
         .container {
             background-color: var(--card);
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
             border-radius: var(--radius);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -46,7 +46,7 @@
         h1 {
             text-align: center;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .menu-subtitle {
@@ -57,14 +57,14 @@
 
         .sets-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 15px;
         }
 
         .set-card {
             border: 2px solid #e2e8f0;
             border-radius: var(--radius);
-            padding: 15px;
+            padding: 20px;
             text-align: center;
             cursor: pointer;
             transition: 0.3s;
@@ -72,6 +72,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            min-height: 100px;
         }
 
         .set-card:hover {
@@ -81,7 +82,7 @@
         }
 
         .set-card h3 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--text);
         }
 
@@ -101,16 +102,16 @@
         }
 
         .question-text {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .option {
             background: #f8fafc;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
-            padding: 12px 15px;
+            padding: 14px 18px;
             margin-bottom: 10px;
             cursor: pointer;
             transition: 0.2s;
@@ -144,8 +145,8 @@
             padding: 15px;
             border-radius: 8px;
             border-left: 6px solid var(--primary);
-            margin: 15px 0;
-            font-size: 0.95rem;
+            margin: 20px 0;
+            font-size: 1rem;
         }
 
         .btn {
@@ -153,7 +154,7 @@
             background: var(--primary);
             color: #fff;
             border: none;
-            padding: 14px;
+            padding: 16px;
             border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
@@ -171,35 +172,35 @@
     <div class="container">
         <div id="menu-section">
             <h1>Platforma Quizowa ISTQB</h1>
-            <p class="menu-subtitle" id="status-msg">Ładowanie pytań...</p>
+            <p class="menu-subtitle" id="status-msg">Ładowanie bazy pytań...</p>
             <div id="sets-grid" class="sets-grid"></div>
         </div>
 
         <div id="quiz-section" class="hidden">
             <div class="header-bar">
-                <h2 id="quiz-title" style="font-size: 1.2rem;"></h2>
-                <div id="progress-text" style="color: var(--muted); font-size: 0.9rem;"></div>
+                <h2 id="quiz-title"></h2>
+                <div id="progress-text" style="color: var(--muted)"></div>
             </div>
             <div class="question-text" id="question-body"></div>
             <div id="options-container"></div>
             <div id="justification-box" class="justification hidden"></div>
             <button id="action-btn" class="btn hidden">Dalej</button>
-            <button class="btn" style="background:#64748b; margin-top:15px; padding: 10px;"
-                onclick="location.reload()">Wróć do menu</button>
+            <button class="btn" style="background:#64748b; margin-top:20px;" onclick="location.reload()">Wróć do
+                menu</button>
         </div>
 
         <div id="results-section" class="hidden" style="text-align: center;">
-            <h2 style="margin-bottom: 15px;">Wynik testu</h2>
-            <div style="font-size: 2.5rem; color: var(--primary); font-weight: 800; margin-bottom: 20px;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Zestaw ukończony!</h2>
+            <div style="font-size: 3rem; color: var(--primary); font-weight: 800; margin-bottom: 30px;">
                 <span id="final-score">0</span> / <span id="final-total">0</span>
             </div>
-            <button class="btn" onclick="location.reload()">Rozwiąż inny zestaw</button>
+            <button class="btn" onclick="location.reload()">Wybierz inny zestaw</button>
         </div>
     </div>
 
     <script>
         let allQuestionsGlobal = [];
-        let categorizedQuestions = { "A": [], "B": [], "C": [], "D": [], "Dodatkowe": [] };
+        let categorizedQuestions = { "A": [], "B": [], "C": [], "D": [] };
         let currentQuiz = [];
         let currentIdx = 0;
         let score = 0;
@@ -214,21 +215,24 @@
                 const results = await Promise.all(files.map(f => fetch(f).then(r => r.json())));
 
                 results.forEach(data => {
+                    // Przeszukujemy wszystkie klucze w pliku JSON
                     for (const [key, value] of Object.entries(data)) {
-                        // Obsługa różnych struktur JSON (płaskie tablice lub zagnieżdżone obiekty)
                         let questions = [];
-                        if (Array.isArray(value)) questions = value;
-                        else if (typeof value === 'object') {
-                            // Dla pliku 3 i 4 gdzie kluczem jest zakres (np. "Pytania 21-30")
-                            Object.values(value).forEach(qArr => questions.push(...qArr));
+
+                        // Wyciąganie pytań z różnych struktur (tablica lub obiekt)
+                        if (Array.isArray(value)) {
+                            questions = value;
+                        } else if (typeof value === 'object') {
+                            // Jeśli kluczami są np. "Pytania 21-30", zbieramy ich zawartość
+                            Object.values(value).forEach(qList => questions.push(...qList));
                         }
 
-                        // Kategoryzacja
-                        if (key.includes('Zbiór A')) categorizedQuestions["A"].push(...questions);
-                        else if (key.includes('Zbiór B')) categorizedQuestions["B"].push(...questions);
-                        else if (key.includes('Zbiór C')) categorizedQuestions["C"].push(...questions);
-                        else if (key.includes('Zbiór D')) categorizedQuestions["D"].push(...questions);
-                        else if (key.includes('Dodatkowe')) categorizedQuestions["Dodatkowe"].push(...questions);
+                        // Przypisanie do kategorii na podstawie nazwy klucza
+                        const upperKey = key.toUpperCase();
+                        if (upperKey.includes('A')) categorizedQuestions["A"].push(...questions);
+                        else if (upperKey.includes('B')) categorizedQuestions["B"].push(...questions);
+                        else if (upperKey.includes('C')) categorizedQuestions["C"].push(...questions);
+                        else if (upperKey.includes('D')) categorizedQuestions["D"].push(...questions);
 
                         allQuestionsGlobal.push(...questions);
                     }
@@ -237,7 +241,7 @@
                 renderMenu();
                 statusMsg.innerText = "Wybierz zestaw (10 pytań) lub wygeneruj test losowy.";
             } catch (e) {
-                statusMsg.innerText = "Błąd ładowania danych. Sprawdź pliki JSON.";
+                statusMsg.innerText = "Błąd krytyczny: Sprawdź nazwy plików JSON lub konsolę przeglądarki.";
                 console.error(e);
             }
         }
@@ -247,26 +251,30 @@
             grid.innerHTML = '';
 
             // Przycisk LOSOWE 10
-            const randomCard = document.createElement('div');
-            randomCard.className = 'set-card random-card';
-            randomCard.innerHTML = `<h3>🎲 Losowe 10</h3><p style="font-size:0.8rem; color:var(--muted)">Mix z wszystkich zbiorów</p>`;
-            randomCard.onclick = () => {
-                const randomSet = [...allQuestionsGlobal].sort(() => 0.5 - Math.random()).slice(0, 10);
-                startQuiz("Losowe 10 Pytań", randomSet);
-            };
-            grid.appendChild(randomCard);
+            if (allQuestionsGlobal.length > 0) {
+                const randomCard = document.createElement('div');
+                randomCard.className = 'set-card random-card';
+                randomCard.innerHTML = `<h3>🎲 Losowe 10</h3><p style="font-size:0.8rem; color:var(--muted)">Mix z całej bazy</p>`;
+                randomCard.onclick = () => {
+                    const shuffled = [...allQuestionsGlobal].sort(() => 0.5 - Math.random());
+                    startQuiz("Losowe 10 Pytań", shuffled.slice(0, 10));
+                };
+                grid.appendChild(randomCard);
+            }
 
-            // Zestawy po 10 pytań
-            ["A", "B", "C", "D", "Dodatkowe"].forEach(letter => {
+            // Generowanie zestawów po 10 pytań dla każdej litery
+            ["A", "B", "C", "D"].forEach(letter => {
                 const qs = categorizedQuestions[letter];
+                if (qs.length === 0) return;
+
                 for (let i = 0; i < qs.length; i += 10) {
                     const chunk = qs.slice(i, i + 10);
-                    const setName = `${letter} ${i + 1}-${i + chunk.length}`;
+                    const range = `${i + 1}-${i + chunk.length}`;
 
                     const card = document.createElement('div');
                     card.className = 'set-card';
-                    card.innerHTML = `<h3>Zestaw ${setName}</h3>`;
-                    card.onclick = () => startQuiz(`Zestaw ${setName}`, chunk);
+                    card.innerHTML = `<h3>Zestaw ${letter} ${range}</h3>`;
+                    card.onclick = () => startQuiz(`Zestaw ${letter} (${range})`, chunk);
                     grid.appendChild(card);
                 }
             });
@@ -325,7 +333,7 @@
             const opts = document.querySelectorAll('.option');
             if (idx === q.correctIndex) { el.classList.add('correct'); score++; }
             else { el.classList.add('incorrect'); opts[q.correctIndex].classList.add('correct'); }
-            showFinishStep();
+            showJustification();
         }
 
         function checkMulti() {
@@ -340,10 +348,10 @@
             });
             q.correctIndex.forEach(idx => { if (!selected.includes(idx)) opts[idx].classList.add('correct'); });
             if (isCorrect) score++;
-            showFinishStep();
+            showJustification();
         }
 
-        function showFinishStep() {
+        function showJustification() {
             const q = currentQuiz[currentIdx];
             const box = document.getElementById('justification-box');
             box.innerHTML = `<strong>Uzasadnienie:</strong><br>${q.justification}`;
