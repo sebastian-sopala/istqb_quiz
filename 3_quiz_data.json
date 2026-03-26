@@ -1,0 +1,460 @@
+{
+    "Pytania 21-30": {
+        "Zbiór A": [
+            {
+                "question": "Testujesz system obliczający ocenę (0-50: niedostateczna, 51-60: dopuszczająca, 61-70: dostateczna, 71-80: dobra, 81-90: bardzo dobra, 91-100: celująca). Jakie pokrycie wartości brzegowych (2-punktowe) osiąga zbiór: 91, 50, 81, 60, 70, 80?",
+                "options": [
+                    "a) 50%",
+                    "b) 60%",
+                    "c) 33,3%",
+                    "d) 100%"
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Istnieje 12 wartości brzegowych: 0, 50, 51, 60, 61, 70, 71, 80, 81, 90, 91 oraz 100. Zbiór pokrywa 6 z nich, co stanowi 50%."
+            },
+            {
+                "question": "W systemie wypożyczalni rowerów uczestnicy programu lojalnościowego otrzymują 20% rabatu, a przy 15. wypożyczeniu koszulkę. Niezwrócenie w terminie = brak rabatu. Która reguła tablicy decyzyjnej opisuje sytuację niemożliwą?",
+                "options": [
+                    "a) R4",
+                    "b) R2",
+                    "c) R6",
+                    "d) R8"
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Reguła R8 opisuje sytuację, w której osoba niebędąca w programie lojalnościowym otrzymuje koszulkę, co jest niezgodne z opisem funkcjonalności."
+            },
+            {
+                "question": "Jaka jest MINIMALNA liczba przypadków testowych niezbędna do uzyskania pokrycia poprawnych przejść na diagramie (INICJOWANIE, TRYB DEBUG, PRACA, WSTRZYMANIE, WYŁ)?",
+                "options": [
+                    "a) 4",
+                    "b) 2",
+                    "c) 7",
+                    "d) 3"
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Przejścia 'test' i 'błąd' nie mogą wystąpić w jednym przypadku, podobnie jak oba przejścia 'gotowe'. Wymagane są minimum 3 scenariusze."
+            },
+            {
+                "question": "Zestaw testowy osiągnął 100% pokrycia instrukcji. Co to oznacza?",
+                "options": [
+                    "a) Każda instrukcja zawierająca defekt została wykonana przynajmniej raz.",
+                    "b) Dowolny większy zestaw też osiągnie 100% pokrycia.",
+                    "c) Każda ścieżka została wykonana.",
+                    "d) Każda kombinacja wejść została przetestowana."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> 100% pokrycia instrukcji oznacza, że każda wykonywalna instrukcja (w tym te z defektami) została uruchomiona i oceniona."
+            },
+            {
+                "question": "Które stwierdzenie NIE jest zgodne z prawdą o testowaniu białoskrzynkowym?",
+                "options": [
+                    "a) Uwzględniana jest cała implementacja.",
+                    "b) Miary pokrycia pomagają wskazać dodatkowe testy.",
+                    "c) Można je stosować w testowaniu statycznym.",
+                    "d) Pozwala rozpoznać luki w implementacji wymagań."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> To słaby punkt technik białoskrzynkowych; nie pozwalają one rozpoznać braków w implementacji, gdyż bazują na strukturze, a nie na wymaganiach."
+            },
+            {
+                "question": "Co najlepiej opisuje koncepcję zgadywania błędów?",
+                "options": [
+                    "a) Wykorzystanie wiedzy o dotychczasowych defektach i pomyłkach programistów.",
+                    "b) Wykorzystanie wiedzy zdobytej tylko na stanowisku programisty.",
+                    "c) Wyobrażenie sobie bycia użytkownikiem systemu.",
+                    "d) Szybkie powielenie zadania programistycznego."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Technika ta opiera się na zgadywaniu pomyłek i defektów na podstawie doświadczenia testera."
+            },
+            {
+                "question": "W nowym projekcie bez pełnej listy wymagań i pod presją czasu, jaka technika będzie najlepsza dla doświadczonego analityka?",
+                "options": [
+                    "a) Lista kontrolna.",
+                    "b) Zgadywanie błędów.",
+                    "c) Testowanie eksploracyjne.",
+                    "d) Testowanie gałęzi."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Testowanie eksploracyjne jest najbardziej przydatne przy niepełnych specyfikacjach i presji czasu."
+            },
+            {
+                "question": "Jak najlepiej dokumentować kryteria akceptacji?",
+                "options": [
+                    "a) Przez retrospektywę.",
+                    "b) W formacie Given/When/Then.",
+                    "c) Słownie.",
+                    "d) W rejestrze ryzyk planu testów."
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Format Given/When/Then (Mając/Kiedy/Wtedy) jest standardowym sposobem dokumentowania kryteriów akceptacji."
+            },
+            {
+                "question": "Dla historyjki redaktora weryfikującego treść, jaki test najlepiej pasuje do modelu ATDD?",
+                "options": [
+                    "a) Czy redaktor może zapisać dokument po edycji.",
+                    "b) Czy właściciel treści może zaktualizować stronę.",
+                    "c) Czy redaktor może wyznaczyć termin publikacji.",
+                    "d) Czy redaktor może zlecić edycję innemu redaktorowi."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Ten test pokrywa dwa kryteria akceptacji: edycję oraz zapisywanie zmian."
+            },
+            {
+                "question": "Jaki jest wkład testerów w planowanie iteracji i wydań?",
+                "options": [
+                    "a) Ustalanie priorytetów historyjek.",
+                    "b) Koncentracja tylko na aspektach funkcjonalnych.",
+                    "c) Uczestnictwo w szczegółowej identyfikacji i ocenie ryzyka historyjek.",
+                    "d) Gwarantowanie braku awarii przez wczesne projektowanie."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Testerzy wnoszą wkład m.in. poprzez udział w procesie analizy ryzyka dla poszczególnych historyjek."
+            }
+        ],
+        "Zbiór B": [
+            {
+                "question": "Dla zmiennej 'długość hasła' (poprawne 6-12 znaków), jakie dodatkowe wartości należy przetestować, aby przejść z 2-punktowej na 3-punktową analizę BVA?",
+                "options": [
+                    "a) 4, 5, 13, 14",
+                    "b) 7, 11",
+                    "c) 1, 5, 13",
+                    "d) 1, 4, 7, 11, 14"
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> 3-punktowa BVA wymaga wartości: 0, 1, 4, 5, 6, 7, 11, 12, 13, 14. 2-punktowa pokryła już 0, 5, 6, 12, 13."
+            },
+            {
+                "question": "Jakie pokrycie tablicy decyzyjnej uzyska 5 przypadków PT1-PT5, jeśli pokrywają one reguły nr 4, 2 oraz 5?",
+                "options": [
+                    "a) 40%",
+                    "b) 60%",
+                    "c) 80%",
+                    "d) 100%"
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> 3 z 5 kolumn są pokryte, co daje $(3/5)*100% = 60%$."
+            },
+            {
+                "question": "System pamięci (max 3 elementy). Która sekwencja zdarzeń osiąga najwyższy poziom pokrycia poprawnych przejść?",
+                "options": [
+                    "a) Dodaj, Usuń, Dodaj, Dodaj, Dodaj",
+                    "b) Dodaj, Dodaj, Dodaj, Dodaj, Usuń, Usuń",
+                    "c) Dodaj, Dodaj, Dodaj, Usuń, Usuń",
+                    "d) Dodaj, Dodaj, Dodaj, Usuń, Dodaj"
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Sekwencja ta (E1, E2, E4, E5, E3) pokrywa 5 z 5 (100%) poprawnych przejść."
+            },
+            {
+                "question": "T1 daje 40% pokrycia instrukcji, T2 daje 65%. Co jest na pewno prawdziwe?",
+                "options": [
+                    "a) Razem dają 105%.",
+                    "b) Co najmniej jedna instrukcja wykonuje się w obu testach.",
+                    "c) 5% instrukcji jest niewykonalnych.",
+                    "d) Zestaw daje pełne pokrycie gałęzi."
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Suma 105% jest niemożliwa (max 100%), więc co najmniej 5% instrukcji musiało zostać wykonanych w obu testach."
+            },
+            {
+                "question": "Wskaźnik pokrycia gałęzi $PG = (X/Y)*100%$. Co oznaczają X i Y?",
+                "options": [
+                    "a) X: wyniki decyzji; Y: suma wyników decyzji.",
+                    "b) X: gałęzie warunkowe; Y: wszystkie gałęzie.",
+                    "c) X: gałęzie sprawdzone; Y: wszystkie gałęzie.",
+                    "d) X: gałęzie warunkowe; Y: suma wyników decyzji."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Pokrycie gałęzi to stosunek sprawdzonych gałęzi (warunkowych i bezwarunkowych) do ich łącznej liczby."
+            },
+            {
+                "question": "Wskaż DWA uzasadnienia dla testowania eksploracyjnego.",
+                "options": [
+                    "a) Brak czasu na projektowanie.",
+                    "b) Wymóg formalnych technik black-box.",
+                    "c) Specyfikacja w języku formalnym.",
+                    "d) Testerzy z Agile i kodowaniem.",
+                    "e) Doświadczenie dziedzinowe i analityczne."
+                ],
+                "correctIndex": [
+                    0,
+                    4
+                ],
+                "justification": "<strong>Odpowiedzi a i e są poprawne.</strong> Technika ta jest przydatna pod presją czasu oraz gdy tester posiada wysoką wiedzę merytoryczną i umiejętności analizy."
+            },
+            {
+                "question": "Co najlepiej sprawdzi się jako element listy kontrolnej?",
+                "options": [
+                    "a) Programista popełnił błąd.",
+                    "b) Pokrycie instrukcji > 85%.",
+                    "c) Program działa poprawnie funkcjonalnie.",
+                    "d) Komunikaty błędów są zrozumiałe dla użytkownika."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Elementy listy kontrolnej powinny być konkretnymi warunkami testowymi do weryfikacji."
+            },
+            {
+                "question": "W jakim formacie zapisano kryteria akceptacji: (Given) Użytkownik zalogowany... (When) klika... (Then) widzi...?",
+                "options": [
+                    "a) Ukierunkowanym na reguły.",
+                    "b) Ukierunkowanym na scenariusze.",
+                    "c) Ukierunkowanym na produkt.",
+                    "d) Ukierunkowanym na proces."
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Format Given/When/Then opisuje scenariusz do weryfikacji."
+            },
+            {
+                "question": "Dla historyjki o wyświetlaniu poprzednich zamówień, który test NIE jest istotny?",
+                "options": [
+                    "a) Logowanie i kliknięcie 'historia'.",
+                    "b) Kliknięcie zamówienia z listy.",
+                    "c) Sortowanie historii rosnąco.",
+                    "d) Rejestracja nowego klienta."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Rejestracja to inny proces, nieuwzględniony w tej konkretnej historyjce."
+            },
+            {
+                "question": "Co jest najlepszym kryterium wejścia dla kroku (2) DevOps: 'Wprowadzenie kodu do systemu kontroli wersji'?",
+                "options": [
+                    "a) Brak ostrzeżeń krytycznych analizy statycznej.",
+                    "b) Brak konfliktów scalania.",
+                    "c) Testy modułowe gotowe do wykonania.",
+                    "d) Pokrycie instrukcji min. 80%."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Jest to warunek, który można sprawdzić przed zatwierdzeniem kodu w repozytorium."
+            }
+        ],
+        "Zbiór C": [
+            {
+                "question": "Reguła: JEŻELI (wartość <= 100 OR wartość >= 200) TO 'niepoprawna'. Który zestaw 2-punktowej BVA daje największe pokrycie?",
+                "options": [
+                    "a) 100, 150, 200, 201",
+                    "b) 99, 100, 200, 201",
+                    "c) 98, 99, 100, 101",
+                    "d) 101, 150, 199, 200"
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Wartości brzegowe to 100, 101, 199 i 200. Zbiór (d) pokrywa 3 z nich (101, 199, 200), dając 75% pokrycia."
+            },
+            {
+                "question": "Która kombinacja w tablicy wyników egzaminu wykaże sprzeczne reguły?",
+                "options": [
+                    "a) W1=P, W2=P, W3=F",
+                    "b) W1=P, W2=F, W3=P",
+                    "c) W1=P, W2=P, W3=P oraz W1=F, W2=P, W3=P",
+                    "d) W1=F, W2=F, W3=F"
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Kombinacja (F, F, F) odpowiada regułom R2 i R3, które mają zdefiniowane różne akcje."
+            },
+            {
+                "question": "Jaka jest MINIMALNA liczba przypadków dla 100% pokrycia przejść na diagramie rezerwacji sali?",
+                "options": [
+                    "a) 3",
+                    "b) 2",
+                    "c) 5",
+                    "d) 6"
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Trzy sekwencje (Wniosek Przyjęty->Potwierdzenie, Lista Oczekujących->Potwierdzenie, Lista Oczekujących->Koniec) nie mogą wystąpić razem."
+            },
+            {
+                "question": "Ile elementów pokrycia (gałęzi) należy przetestować dla podanego grafu?",
+                "options": [
+                    "a) 2",
+                    "b) 4",
+                    "c) 8",
+                    "d) 7"
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Elementami pokrycia są krawędzie grafu, których jest 8."
+            },
+            {
+                "question": "Jak testowanie białoskrzynkowe wspomaga czarnoskrzynkowe?",
+                "options": [
+                    "a) Miary pokrycia ułatwiają ocenę testów czarnoskrzynkowych.",
+                    "b) Analiza pokrycia znajduje nieosiągalny kod.",
+                    "c) Pełne pokrycie gałęzi daje pełne pokrycie dowolnej techniki black-box.",
+                    "d) Określa elementy pokrycia dla technik black-box."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Miary te zapewniają obiektywny pomiar i wskazują potrzebę dodatkowych testów dla wzrostu zaufania."
+            },
+            {
+                "question": "Tester używa listy: 'brak akceptacji poprawnych danych', 'dzielenie przez zero' itp. Co to za technika?",
+                "options": [
+                    "a) Eksploracyjne.",
+                    "b) Atak usterek.",
+                    "c) Lista kontrolna.",
+                    "d) BVA."
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Atak usterek to metodyczne podejście do zgadywania błędów z wykorzystaniem listy potencjalnych awarii."
+            },
+            {
+                "question": "Dlaczego testowanie oparte na liście kontrolnej może zwiększyć pokrycie?",
+                "options": [
+                    "a) Elementy są na niskim poziomie szczegółowości.",
+                    "b) Listy można zautomatyzować.",
+                    "c) Elementy są testowane odrębnie.",
+                    "d) Dwaj testerzy z ogólną listą wykonają testy w nieco inny sposób."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Różne podejścia testerów do ogólnych punktów listy pozwalają pokryć więcej obszarów."
+            },
+            {
+                "question": "Wskaż przykład kryterium akceptacji ukierunkowanego na scenariusze.",
+                "options": [
+                    "a) Prawo do usunięcia danych.",
+                    "b) Klient dodaje towar, przechodzi do płatności i widzi prośbę o login.",
+                    "c) Kod implementujący regułę biznesową.",
+                    "d) Zgodność ze standardem 508."
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Opisuje ono scenariusz, który musi być możliwy do zrealizowania."
+            },
+            {
+                "question": "Który test najlepiej sprawdzi kryterium KA3: 'Specjalni użytkownicy mają wszystkie prawa zwykłych'?",
+                "options": [
+                    "a) Zwykły ma dostęp do pięter 1-3.",
+                    "b) Zwykły nie ma dostępu do piętra 4.",
+                    "c) Specjalny ma dostęp do piętra 5.",
+                    "d) Specjalny ma dostęp do pięter 1, 2 i 3."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Pozwala to sprawdzić, czy specjalny użytkownik ma faktycznie dostęp do pięter zwykłych użytkowników."
+            },
+            {
+                "question": "Co NIE opisuje celu planu testów?",
+                "options": [
+                    "a) Zdefiniowanie szczegółowych danych testowych przypadków.",
+                    "b) Zdefiniowanie kryteriów wyjścia (np. 100% pokrycia).",
+                    "c) Określenie pól raportu postępu.",
+                    "d) Wyjaśnienie odstępstw od strategii."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Szczegółowe dane testowe wchodzą w skład przypadków testowych, nie planu."
+            }
+        ],
+        "Zbiór D": [
+            {
+                "question": "Testujesz system chłodni (zakres OK: 0-2 stopni). Który zestaw danych daje najwyższe pokrycie 2-punktowej BVA?",
+                "options": [
+                    "a) -1, 3",
+                    "b) 0, 2",
+                    "c) -1, 0, 2, 3",
+                    "d) -2, 0, 2, 4"
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Wartości brzegowe to -1 (klasa niska), 0, 2 (klasa OK) oraz 3 (klasa wysoka)."
+            },
+            {
+                "question": "Który przypadek testowy zwiększy pokrycie tablicy decyzyjnej po dodaniu do PT1-PT4?",
+                "options": [
+                    "a) 66 lat, niezarejestrowany, bez doświadczenia.",
+                    "b) 55 lat, niezarejestrowana, 2 lata doświadczenia.",
+                    "c) 19 lat, zarejestrowana, 5 lat doświadczenia.",
+                    "d) Pokrycie nie zwiększy się."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Te warunki odpowiadają regule R4, która nie była dotąd pokryta."
+            },
+            {
+                "question": "W systemie hotelowym, który przypadek testowy osiąga największe pokrycie poprawnych przejść?",
+                "options": [
+                    "a) Niedostępny, Dostępny, Zmień pokój, Niedostępny, Anuluj",
+                    "b) Dostępny, Zmień pokój, Niedostępny, Dostępny, Zapłać",
+                    "c) Dostępny, Zmień pokój, Dostępny, Zmień pokój, Niedostępny",
+                    "d) Niedostępny, Anuluj, Zmień pokój, Dostępny, Zapłać"
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Sekwencja ta pokrywa 5 różnych poprawnych przejść."
+            },
+            {
+                "question": "Zestaw S (3 przypadki po 50% pokrycia) osiągnął 100% pokrycia instrukcji. Co jest poprawne?",
+                "options": [
+                    "a) Wywoła wszystkie awarie.",
+                    "b) Daje 100% pokrycia gałęzi.",
+                    "c) Każda instrukcja z defektem została uruchomiona.",
+                    "d) Po usunięciu jednego przypadku nadal będzie 100%."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> 100% pokrycia gwarantuje, że każda instrukcja (w tym z defektem) została wykonana co najmniej raz."
+            },
+            {
+                "question": "Dlaczego techniki białoskrzynkowe ułatwiają wykrywanie defektów przy nieaktualnej specyfikacji?",
+                "options": [
+                    "a) Projektowanie bazuje na strukturze, nie specyfikacji.",
+                    "b) Pokrycie można precyzyjnie zmierzyć.",
+                    "c) Wykrywają luki w wymaganiach.",
+                    "d) Można je stosować statycznie i dynamicznie."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Uwzględniają one całą implementację, co pozwala wykryć np. niepożądane funkcje niewidoczne w specyfikacji."
+            },
+            {
+                "question": "Czego tester NIE przewidzi w ramach zgadywania błędów?",
+                "options": [
+                    "a) Złego zrozumienia wzoru.",
+                    "b) Błędu w nazwie instrukcji.",
+                    "c) Nieuczestniczenia programisty w seminarium.",
+                    "d) Niewystarczającej dokładności obliczeń."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Brak udziału w szkoleniu to przyczyna, a technika skupia się na przewidywaniu błędów, defektów i awarii."
+            },
+            {
+                "question": "Prawda o testowaniu eksploracyjnym:",
+                "options": [
+                    "a) Projektowanie przed sesją.",
+                    "b) Brak projektowania testów.",
+                    "c) Wskaźnik liczby pozostałych błędów.",
+                    "d) Można korzystać z technik czarnoskrzynkowych."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Tester może stosować dowolne przydatne techniki w trakcie sesji."
+            },
+            {
+                "question": "Technika wspólnego pisania historyjek budująca zrozumienie to:",
+                "options": [
+                    "a) Poker planistyczny.",
+                    "b) Przeglądy.",
+                    "c) Planowanie iteracji.",
+                    "d) Rozmowa."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Rozmowa wyjaśnia sposób używania systemu i pozwala zdefiniować kryteria akceptacji."
+            },
+            {
+                "question": "Dla historyjki o filtrowaniu cen, najlepszy przypadek to:",
+                "options": [
+                    "a) Ustawienie zakresu 90-100 (Produkt A) i zmiana na 110 (A i B).",
+                    "b) Sprawdzenie domyślnych cen minimalnych.",
+                    "c) Zmiana waluty na EUR.",
+                    "d) Przejście przez 3 różne przeglądarki."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Testuje on bezpośrednio kryteria nr 2 i 3 (ustawianie zakresu i dynamikę)."
+            },
+            {
+                "question": "Wskaż kryteria WYJŚCIA projektu testowego.",
+                "options": [
+                    "a) Zatwierdzenie budżetu.",
+                    "b) Przekroczenie budżetu.",
+                    "c) Dostępność podstawy.",
+                    "d) 80% pokrycia instrukcji.",
+                    "e) Certyfikat ISTQB analityków."
+                ],
+                "correctIndex": [
+                    1,
+                    3
+                ],
+                "justification": "<strong>Odpowiedzi b i d są poprawne.</strong> Są to miary staranności lub zdarzenia kończące projekt."
+            }
+        ]
+    }
+}

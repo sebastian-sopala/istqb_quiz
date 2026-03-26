@@ -1,0 +1,460 @@
+{
+    "Pytania 31-40": {
+        "Zbiór A": [
+            {
+                "question": "Wskaż DWA kryteria wyjścia dla testowania systemu. [cite: 4957-4962]",
+                "options": [
+                    "a) Gotowość środowiska.",
+                    "b) Możliwość zalogowania.",
+                    "c) Osiągnięcie szacowanej gęstości defektów.",
+                    "d) Format Given/When/Then wymagań.",
+                    "e) Zautomatyzowanie testów regresji."
+                ],
+                "correctIndex": [
+                    2,
+                    4
+                ],
+                "justification": "<strong>Odpowiedzi c i e są poprawne.</strong> Gęstość defektów to miara staranności, a automatyzacja regresji to warunek ukończenia[cite: 6021]."
+            },
+            {
+                "question": "Szacowanie 3-punktowe: opt=2h, prawd=11h, pes=14h. Jaka jest wartość ostateczna? [cite: 4965-4974]",
+                "options": [
+                    "a) 9h",
+                    "b) 14h",
+                    "c) 11h",
+                    "d) 10h"
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Wzór $E = (opt + 4*prawd + pes) / 6$: $(2 + 44 + 14) / 6 = 10$[cite: 6036]."
+            },
+            {
+                "question": "Biorąc pod uwagę priorytety i zależności (PT1->PT2, PT2->PT5, PT4->PT5, PT4->PT7), który test będzie szósty? [cite: 3455-3465]",
+                "options": [
+                    "a) PT3",
+                    "b) PT5",
+                    "c) PT6",
+                    "d) PT2"
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Kolejność: PT4-PT7-PT1-PT2-PT5-PT3-PT6[cite: 1180]. Szóstym jest PT3[cite: 1180]."
+            },
+            {
+                "question": "Dopasuj kategorie do kwadrantów Agile: 1.Użyteczność, 2.Modułowe, 3.Funkcjonalne, 4.Niezawodność. [cite: 5008-5022]",
+                "options": [
+                    "a) 1C, 2A, 3B, 4D",
+                    "b) 1D, 2A, 3C, 4B",
+                    "c) 1C, 2B, 3D, 4A",
+                    "d) 1D, 2B, 3C, 4A"
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Modułowe=Q1, Funkcjonalne=Q2, Użyteczność=Q3, Niezawodność=Q4[cite: 6036]."
+            },
+            {
+                "question": "Działanie: 'Niezależny zespół wykonuje testy wydajnościowe' to: [cite: 5032-5044]",
+                "options": [
+                    "a) Akceptacja ryzyka.",
+                    "b) Planowanie awaryjne.",
+                    "c) Łagodzenie ryzyka.",
+                    "d) Przeniesienie ryzyka."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Działania testowe mające na celu redukcję ryzyka to forma jego łagodzenia[cite: 6045]."
+            },
+            {
+                "question": "Produkt do pokazywania ilości pracy wykonanej/pozostałej w iteracji to: [cite: 5046-5051]",
+                "options": [
+                    "a) Kryteria akceptacji.",
+                    "b) Raport o defekcie.",
+                    "c) Sumaryczny raport.",
+                    "d) Wykres spalania."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Wykresy spalania aktualizowane codziennie graficznie pokazują postęp[cite: 6045]."
+            },
+            {
+                "question": "Zarejestrowanie nowej wersji zaktualizowanego skryptu to: [cite: 5053-5059]",
+                "options": [
+                    "a) Traceability.",
+                    "b) Pielęgnacyjne.",
+                    "c) Zarządzanie konfiguracją.",
+                    "d) Inżynieria wymagań."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Zarządzanie konfiguracją obejmuje kontrolę wersji wszystkich elementów testowych[cite: 6056]."
+            },
+            {
+                "question": "W raporcie defektu brakuje: środowiska i wersji aplikacji. Które to pola? [cite: 5068-5085]",
+                "options": [
+                    "a) Rezultaty.",
+                    "b) Odwołania i status.",
+                    "c) Środowisko i element testowy.",
+                    "d) Priorytet."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Raport nie mówi w jakim środowisku i której wersji aplikacji wystąpił problem[cite: 6067]."
+            },
+            {
+                "question": "Narzędzie do przygotowywania danych testowych pomaga w: [cite: 5087-5092]",
+                "options": [
+                    "a) Monitorowaniu.",
+                    "b) Analizie.",
+                    "c) Implementacji i wykonywaniu.",
+                    "d) Ukończeniu."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Implementacja obejmuje utworzenie lub pozyskanie danych niezbędnych do testów[cite: 6079]."
+            },
+            {
+                "question": "Potencjalne ryzyko automatyzacji to: [cite: 5101-5110]",
+                "options": [
+                    "a) Nieznane regresje w prod.",
+                    "b) Niewystarczające nakłady na utrzymanie testaliów.",
+                    "c) Brak zaufania do narzędzi.",
+                    "d) Skrócenie czasu manualnego."
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Niewłaściwy przydział zasobów na konserwację skryptów jest realnym ryzykiem[cite: 6090]."
+            }
+        ],
+        "Zbiór B": [
+            {
+                "question": "Średnia ratio test/wytw = 1:10. Nowy projekt wytw = 800k USD. Ile oszacujesz na testowanie? [cite: 2536-2550]",
+                "options": [
+                    "a) 40k",
+                    "b) 80k",
+                    "c) 81.25k",
+                    "d) 82.5k"
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> $10% * 800 000 = 80 000$ USD[cite: 518]."
+            },
+            {
+                "question": "Zależności: Wyszukiwanie przed Wyświetlaniem, Wyświetlanie przed Dodawaniem itp. Priorytety B > A. Który test 4.? [cite: 2560-2576]",
+                "options": [
+                    "a) PT3",
+                    "b) PT7",
+                    "c) PT1",
+                    "d) PT2"
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Po zakończeniu pełnego przepływu dla priorytetowego produktu B (PT2, PT4, PT6), następuje PT1 dla produktu A[cite: 518]."
+            },
+            {
+                "question": "Rodzaj testu należący do kwadrantu Q1 (technologiczny, wsparcie)? [cite: 2578-2583]",
+                "options": [
+                    "a) Użyteczność.",
+                    "b) Funkcjonalne.",
+                    "c) Akceptacyjne.",
+                    "d) Integracja modułów."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Ten typ testów wspiera zespół i jest techniczny[cite: 542]."
+            },
+            {
+                "question": "Dopasuj ryzyko: 1.Długi czas odp., 2.Zmiana preferencji, 3.Zalanie, 4.Wiek pacjentów błędny. [cite: 2592-2630]",
+                "options": [
+                    "a) 1C, 2D, 3A, 4B",
+                    "b) 1B, 2D, 3A, 4C",
+                    "c) 1B, 2A, 3D, 4C",
+                    "d) 1C, 2A, 3D, 4B"
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Wydajnościowe(1B), Akceptacja(2A), Przeniesienie(3D), BVA(4C)[cite: 554]."
+            },
+            {
+                "question": "Wskaż metrykę jakości produktu. [cite: 2632-2637]",
+                "options": [
+                    "a) Średni czas do awarii.",
+                    "b) Liczba błędów.",
+                    "c) Pokrycie wymagań.",
+                    "d) Odsetek błędów."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> MTBF określa dojrzałość produktu jako charakterystykę jakościową[cite: 566]."
+            },
+            {
+                "question": "Team w USA, klient w Europie. Najmniej skuteczny sposób komunikacji postępu? [cite: 2647-2658]",
+                "options": [
+                    "a) Bezpośrednia.",
+                    "b) Tablice.",
+                    "c) E-mail.",
+                    "d) Wideokonferencje."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Różnice stref czasowych utrudniają bezpośrednią komunikację słowną[cite: 575]."
+            },
+            {
+                "question": "Zarządzanie konfiguracją wspiera testy przez: [cite: 2660-2665]",
+                "options": [
+                    "a) Pobranie wersji bibliotek i sterowników środowiska.",
+                    "b) Obliczanie pokrycia.",
+                    "c) Info o wygaśnięciu licencji.",
+                    "d) Generowanie danych testowych."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> System rejestruje elementy składowe konfiguracji i ich wersje[cite: 586]."
+            },
+            {
+                "question": "Najlepszy opis awarii w raporcie sortowania (ignore duplicates): [cite: 2675-2715]",
+                "options": [
+                    "a) Niepoprawne sortowanie PT3,4,5.",
+                    "b) System nie uwzględnia zduplikowanych wartości.",
+                    "c) Nie sortuje ujemnych.",
+                    "d) W PT3,4,5 są defekty."
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Informacja o pomijaniu duplikatów pomaga skuteczniej usunąć defekt[cite: 586]."
+            },
+            {
+                "question": "Powiąż: 1.Workflow, 2.Komunikacja, 3.VM, 4.Review z kategoriami: A.Statyczne, B.Skalowalność/Wdrażanie, C.DevOps, D.Współpraca. [cite: 2724-2754]",
+                "options": [
+                    "a) 1A, 2B, 3C, 4D",
+                    "b) 1B, 2D, 3C, 4A",
+                    "c) 1C, 2D, 3B, 4A",
+                    "d) 1D, 2C, 3A, 4B"
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> DevOps(1C), Współpraca(2D), VM(3B), Statyczne(4A)[cite: 598]."
+            },
+            {
+                "question": "Korzyść z automatyzacji to: [cite: 2757-2762]",
+                "options": [
+                    "a) Miary pokrycia zbyt złożone dla ludzi.",
+                    "b) Dostawca narzędzia bierze odpowiedzialność.",
+                    "c) Brak myślenia krytycznego.",
+                    "d) Analiza kodu generuje testy bez wymagań."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Narzędzia potrafią mierzyć pokrycie w nietrywialnym kodzie szybciej i dokładniej niż ludzie[cite: 608]."
+            }
+        ],
+        "Zbiór C": [
+            {
+                "question": "Model E(n) = (3*A(n-1)+A(n-2))/4. A(4)=6, A(3)=8. Ile E(5)? [cite: 3411-3439]",
+                "options": [
+                    "a) 10,5",
+                    "b) 8,25",
+                    "c) 6,5",
+                    "d) 9,4"
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> $E(5) = (3*6 + 8)/4 = 6,5$[cite: 1180]."
+            },
+            {
+                "question": "Harmonogram PT1-PT7 z zależnościami i priorytetami. Który 6.? [cite: 3450-3470]",
+                "options": [
+                    "a) PT3",
+                    "b) PT5",
+                    "c) PT6",
+                    "d) PT2"
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> PT4-PT7-PT1-PT2-PT5-PT3-PT6[cite: 1180]. Szósty to PT3."
+            },
+            {
+                "question": "Co odzwierciedla piramida testów? [cite: 3472-3477]",
+                "options": [
+                    "a) Priorytety.",
+                    "b) Różne poziomy szczegółowości.",
+                    "c) Kryteria pokrycia.",
+                    "d) Zależności."
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Model pokazuje, że testy różnią się granularnością na poziomach[cite: 1193]."
+            },
+            {
+                "question": "Związek kwadrantów, poziomów i typów: [cite: 3487-3495]",
+                "options": [
+                    "a) Kombinacje miejsca w SDLC.",
+                    "b) Poziom szczegółowości.",
+                    "c) Dowolny typ na dowolnym poziomie.",
+                    "d) Grupowanie wg celów (biznes/technologia) i wsparcia/krytyki."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Kwadranty grupują czynności w kontekście Agile dla konkretnych interesariuszy[cite: 1206]."
+            },
+            {
+                "question": "Wpływ analizy ryzyka produktowego na staranność/zakres: [cite: 3497-3502]",
+                "options": [
+                    "a) Monitorowanie.",
+                    "b) Łagodzenie.",
+                    "c) Ocena poziomu ryzyka ułatwia określenie szczegółowości.",
+                    "d) Definiuje elementy pokrycia."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Analiza wpływa bezpośrednio na staranność testowania[cite: 1219]."
+            },
+            {
+                "question": "Która czynność najbardziej korzysta z raportów postępu? [cite: 3512-3521]",
+                "options": [
+                    "a) Projektowanie.",
+                    "b) Ukończenie.",
+                    "c) Analiza.",
+                    "d) Planowanie."
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Raport zbiorczy (ukończenie) bazuje na danych z raportów postępu[cite: 1232]."
+            },
+            {
+                "question": "Zarządzanie konfiguracją NIE zapewnia: [cite: 3523-3528]",
+                "options": [
+                    "a) Identyfikacji repozytorium.",
+                    "b) Śledzenia zmian środowiska.",
+                    "c) Odwołania w planach.",
+                    "d) Statusowania defektów."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Statusy defektów to domena zarządzania defektami[cite: 1245]."
+            },
+            {
+                "question": "Najważniejszy brak w raporcie defektu (nie działa przycisk logowania): [cite: 3538-3555]",
+                "options": [
+                    "a) Imię testera.",
+                    "b) Przeglądarka i urządzenie.",
+                    "c) ID przedmiotu.",
+                    "d) Wpływ."
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Defekt może zależeć od konkretnej konfiguracji przeglądarki[cite: 1258]."
+            },
+            {
+                "question": "Narzędzia ułatwiające uporządkowanie przypadków, błędów i konfig: [cite: 3566-3576]",
+                "options": [
+                    "a) Wykonywania.",
+                    "b) Projektowania.",
+                    "c) Zarządzania błędami.",
+                    "d) Zarządzania testowaniem."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Wspierają one zarządzanie całym cyklem życia i testami[cite: 1271]."
+            },
+            {
+                "question": "Korzyść z automatyzacji: [cite: 3578-3583]",
+                "options": [
+                    "a) Generowanie bez podstawy.",
+                    "b) Większe pokrycie przez ocenę.",
+                    "c) Dłuższy czas przez moc obliczeniową.",
+                    "d) Zapobieganie błędom ludzkim przez spójność."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Gwarantuje ona powtarzalność i eliminację pomyłek manualnych[cite: 1284]."
+            }
+        ],
+        "Zbiór D": [
+            {
+                "question": "3-punktowe oszacowanie czasu dla 4 przypadków (opt=1h, pes=8h, prawd=3h): [cite: 4209-4219]",
+                "options": [
+                    "a) 14h",
+                    "b) 3,5h",
+                    "c) 16h",
+                    "d) 12h"
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> $E = (1 + 12 + 8) / 6 = 3,5$h na test. Dla 4 testów = 14h[cite: 1816]."
+            },
+            {
+                "question": "Priorytetyzacja dodatkowym pokryciem. PT1(4/7), PT2, PT3, PT4. Który ostatni? [cite: 4229-4243]",
+                "options": [
+                    "a) PT1",
+                    "b) PT2",
+                    "c) PT3",
+                    "d) PT4"
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Po PT1, PT3 i PT4 wszystkie wymagania są pokryte; PT2 nie wnosi już nic nowego[cite: 1829]."
+            },
+            {
+                "question": "Zaleta kwadrantów dla interesariuszy nietechnicznych: [cite: 4245-4250]",
+                "options": [
+                    "a) Podział na 4 poziomy.",
+                    "b) Ocena pokrycia.",
+                    "c) Zrozumienie relacji typów i celów.",
+                    "d) Strategia komunikacji osób."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Pozwalają zrozumieć relację między testami wspierającymi a krytyką produktu[cite: 1842]."
+            },
+            {
+                "question": "Ryzyko = 1000 PLN, prawd = 50%. Wpływ = ? [cite: 4259-4272]",
+                "options": [
+                    "a) 500",
+                    "b) 2000",
+                    "c) 50000",
+                    "d) 200"
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> $1000 / 0,5 = 2000$ PLN[cite: 1842]."
+            },
+            {
+                "question": "Wskaż DWA ryzyka produktowe. [cite: 4274-4281]",
+                "options": [
+                    "a) Scope creep.",
+                    "b) Zła architektura.",
+                    "c) Finanse.",
+                    "d) Brak narzędzi.",
+                    "e) Czas odpowiedzi."
+                ],
+                "correctIndex": [
+                    1,
+                    4
+                ],
+                "justification": "<strong>Odpowiedzi b i e są poprawne.</strong> Odnoszą się bezpośrednio do charakterystyki produktu[cite: 1860]."
+            },
+            {
+                "question": "Co NIE jest celem raportu z testów? [cite: 4283-4288]",
+                "options": [
+                    "a) Monitorowanie postępu.",
+                    "b) Sumaryczna info o wynikach.",
+                    "c) Kroki odtworzenia konkretnych defektów.",
+                    "d) Planowane testy na potem."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Kroki odtworzenia znajdują się w raporcie o defekcie, nie w raporcie z testów[cite: 1860]."
+            },
+            {
+                "question": "Identyfikacja plików wydania na podstawie wersji to: [cite: 4297-4310]",
+                "options": [
+                    "a) Ryzyko.",
+                    "b) Nadzór.",
+                    "c) Whole team.",
+                    "d) Konfiguracja."
+                ],
+                "correctIndex": 3,
+                "justification": "<strong>Odpowiedź d jest poprawna.</strong> Umożliwia ona śledzenie produktów pracy i odtwarzanie wyników[cite: 1873]."
+            },
+            {
+                "question": "Co najbardziej pomoże odtworzyć awarię braku możliwości zwrotu książki? [cite: 4311-4326]",
+                "options": [
+                    "a) Info których użytkowników i książek dotyczy problem.",
+                    "b) Priorytet.",
+                    "c) Zrzuty pamięci po każdym kroku.",
+                    "d) Inne środowiska."
+                ],
+                "correctIndex": 0,
+                "justification": "<strong>Odpowiedź a jest poprawna.</strong> Konkretne dane wejściowe umożliwiają szybkie powtórzenie awarii[cite: 1882]."
+            },
+            {
+                "question": "Kategorie narzędzi ułatwiające WYKONYWANIE testów: [cite: 4335-4353]",
+                "options": [
+                    "a) i, v",
+                    "b) ii (DevOps), iv (Niefunkcjonalne)",
+                    "c) i, iii, v",
+                    "d) ii, iii, iv"
+                ],
+                "correctIndex": 1,
+                "justification": "<strong>Odpowiedź b jest poprawna.</strong> Narzędzia te bezpośrednio wspomagają uruchamianie testów automatycznych i niefunkcjonalnych[cite: 1892]."
+            },
+            {
+                "question": "Ryzyko automatyzacji to: [cite: 4355-4361]",
+                "options": [
+                    "a) Wykrycie krytycznych błędów.",
+                    "b) Złożone miary pokrycia.",
+                    "c) Niekompatybilność z platformą.",
+                    "d) Skrócenie czasu."
+                ],
+                "correctIndex": 2,
+                "justification": "<strong>Odpowiedź c jest poprawna.</strong> Brak integracji uniemożliwi automatyczne przekazywanie danych i wyników[cite: 1908]."
+            }
+        ]
+    }
+}

@@ -1,0 +1,454 @@
+{
+    "Zbiór A (11-20)": [
+        {
+            "question": "Które z poniższych stwierdzeń NIE jest przykładem przesunięcia w lewo (ang. shift left)?",
+            "options": [
+                "a) Dokonywanie przeglądu wymagań użytkowników przed ich formalnym zaakceptowaniem przez interesariuszy.",
+                "b) Pisanie testu modułowego przed napisaniem odpowiadającego mu kodu.",
+                "c) Wykonywanie testu wydajności modułu w trakcie testowania modułowego.",
+                "d) Pisanie skryptu testowego przed ustanowieniem procesu zarządzania konfiguracją."
+            ],
+            "correctIndex": 3,
+            "justification": "<strong>Odpowiedź d jest poprawna.</strong> Skrypty testowe powinny być objęte zarządzaniem konfiguracją, w związku z czym tworzenie ich przed ustanowieniem tego procesu nie ma sensu[cite: 5816]."
+        },
+        {
+            "question": "Którego z poniższych argumentów należałoby użyć, aby przekonać kierownika do organizowania retrospektyw na zakończenie każdego cyklu przekazywania oprogramowania do eksploatacji?",
+            "options": [
+                "a) Retrospektywy są obecnie bardzo popularne, dlatego klienci byliby zadowoleni, gdybyśmy uwzględnili je w naszych procesach.",
+                "b) Organizowanie retrospektyw przyniesie organizacji wymierne oszczędności, ponieważ przedstawiciele użytkowników nie przekazują natychmiastowych informacji zwrotnych.",
+                "c) Słabe punkty procesów zidentyfikowane podczas retrospektywy można przeanalizować, a następnie wykorzystać do opracowania listy działań w ramach doskonalenia procesów.",
+                "d) Retrospektywy realizują pięć wartości (w tym odwagę i szacunek), które są kluczowe dla utrzymania procesu ciągłego doskonalenia."
+            ],
+            "correctIndex": 2,
+            "justification": "<strong>Odpowiedź c jest poprawna.</strong> Regularnie przeprowadzane retrospektywy połączone z odpowiednimi działaniami weryfikacyjnymi mają kluczowe znaczenie dla ciągłego doskonalenia procesów[cite: 5827]."
+        },
+        {
+            "question": "Które typy awarii (1-4) NAJLEPIEJ odpowiadają poszczególnym poziomom testów (A-D)?\n1. Awarie związane z zachowaniem systemu (niezgodność z potrzebami biznesowymi).\n2. Awarie dotyczące komunikacji między modułami.\n3. Awarie dotyczące logiki danego modułu.\n4. Awarie związane z nieprawidłowo zaimplementowanymi regułami biznesowymi.\n\nA. Testowanie modułowe, B. Testowanie integracji modułów, C. Testowanie systemowe, D. Testowanie akceptacyjne.",
+            "options": [
+                "a) 1D, 2B, 3A, 4C",
+                "b) 1D, 2B, 3C, 4A",
+                "c) 1B, 2A, 3D, 4C",
+                "d) 1C, 2B, 3A, 4D"
+            ],
+            "correctIndex": 0,
+            "justification": "<strong>Odpowiedź a jest poprawna.</strong> Podstawą testów w akceptacyjnych są potrzeby użytkownika (1D). Komunikację między modułami testuje się w integracji modułów (2B). Logikę modułu w testach modułowych (3A), a reguły biznesowe w systemowych (4C)[cite: 5835]."
+        },
+        {
+            "question": "W ramach trzech przebiegów testów historyjki użytkownika, które z wykonanych testów (PT1-PT3) są traktowane jako testy regresji?",
+            "options": [
+                "a) Tylko 4, 7, 8 i 9.",
+                "b) Tylko 5 i 7.",
+                "c) Tylko 4, 6, 8 i 9.",
+                "d) Tylko 5 i 6."
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Test (5) jest testem regresji, ponieważ PT2 został zaliczony w przebiegu 1. Test (7) jest testem regresji, ponieważ PT1 został zaliczony w przebiegu 2[cite: 5839]."
+        },
+        {
+            "question": "Które z poniższych stwierdzeń NIE opisuje korzyści wynikających z testowania statycznego?",
+            "options": [
+                "a) Obniżenie kosztów zarządzania defektami z uwagi na łatwość wykrywania defektów na późniejszych etapach cyklu wytwarzania.",
+                "b) Niższe koszty usuwania defektów wykrytych podczas testowania statycznego w porównaniu z usuwaniem defektów wykrytych podczas testowania dynamicznego.",
+                "c) Wykrywanie defektów w kodzie, które mogłyby nie zostać wykryte w przypadku wykonania wyłącznie testowania dynamicznego.",
+                "d) Wykrywanie luk i niespójności w wymaganiach."
+            ],
+            "correctIndex": 0,
+            "justification": "<strong>Odpowiedź a jest poprawna.</strong> Stwierdzenie to jest niepoprawne, ponieważ koszty wykrywania i usuwania defektów na późniejszych etapach cyklu wytwarzania są w istocie wyższe[cite: 5840]."
+        },
+        {
+            "question": "Które z poniższych jest korzyścią wynikającą z wczesnego i częstego otrzymywania informacji zwrotnych?",
+            "options": [
+                "a) Usprawnienie procesu testowego na potrzeby przyszłych projektów.",
+                "b) Zmuszanie klientów do ustalania priorytetów wymagań na podstawie uzgodnionych ryzyk.",
+                "c) Jest to jedyny sposób mierzenia jakości zmian.",
+                "d) Unikanie nieporozumień w kwestii wymagań."
+            ],
+            "correctIndex": 3,
+            "justification": "<strong>Odpowiedź d jest poprawna.</strong> Wczesne i częste informacje zwrotne mogą zapobiec nieporozumieniom dotyczącym wymagań[cite: 5850]."
+        },
+        {
+            "question": "Przegląd w organizacji ma atrybuty: wyznaczony protokolant, cel to ocena jakości, autor prowadzi spotkanie, uczestnicy przygotowują się indywidualnie, sporządzany jest raport. Jaki to typ przeglądu?",
+            "options": [
+                "a) Przegląd nieformalny.",
+                "b) Przejrzenie.",
+                "c) Przegląd techniczny.",
+                "d) Inspekcja."
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Prowadzenie spotkania przez autora w celu dokonania oceny jakości odpowiada charakterystyce przejrzenia (ang. walkthrough)[cite: 5861]."
+        },
+        {
+            "question": "Który z wymienionych elementów NIE jest czynnikiem przyczyniającym się do powodzenia przeglądu?",
+            "options": [
+                "a) Przeznaczenie przez uczestników odpowiedniej ilości czasu na przeprowadzenie przeglądu.",
+                "b) Podzielenie dużych produktów pracy na mniejsze części w celu zmniejszenia wymaganych nakładów pracy.",
+                "c) Uczestnicy powinni unikać zachowań wskazujących na znudzenie lub wrogie nastawienie.",
+                "d) Przyjmowanie do wiadomości, potwierdzanie i rozpatrywanie wykrytych awarii w obiektywny sposób."
+            ],
+            "correctIndex": 3,
+            "justification": "<strong>Odpowiedź d jest poprawna.</strong> Jest to odpowiedź niepoprawna jako czynnik sukcesu, ponieważ podczas przeglądów wykrywa się defekty, a nie awarie[cite: 5873]."
+        },
+        {
+            "question": "Która z poniższych cech charakteryzuje techniki testowania oparte na doświadczeniu?",
+            "options": [
+                "a) Przypadki testowe są tworzone na podstawie szczegółowych informacji projektowych.",
+                "b) Do mierzenia pokrycia używane są elementy testowane w kodzie implementującym interfejsy.",
+                "c) Stosowane techniki bazują w dużej mierze na wiedzy testera dotyczącej oprogramowania i dziedziny biznesowej.",
+                "d) Za pomocą przypadków testowych identyfikowane są odchylenia od wymagań."
+            ],
+            "correctIndex": 2,
+            "justification": "<strong>Odpowiedź c jest poprawna.</strong> Do definiowania testów w technikach opartych na doświadczeniu wykorzystywane są wiedza i doświadczenie testera[cite: 5885]."
+        },
+        {
+            "question": "Testujesz formularz (kondygnacja: parter, 1p, 2p+; ogródek: brak, mały, duży). Ogródki tylko na parterze. Jaka jest minimalna liczba przypadków do 100% pokrycia klas równoważności?",
+            "options": [
+                "a) 3",
+                "b) 4",
+                "c) 5",
+                "d) 6"
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Potrzebne są dwa testy na parterze (by pokryć mały i duży ogródek) oraz po jednym dla pozostałych pięter z opcją 'brak ogródka', co łącznie daje cztery testy[cite: 5895]."
+        }
+    ],
+    "Zbiór B (11-20)": [
+        {
+            "question": "Która z następujących odpowiedzi przedstawia przykład podejścia „najpierw test” do wytwarzania oprogramowania?",
+            "options": [
+                "a) Wytwarzanie sterowane testami.",
+                "b) Wytwarzanie sterowane pokryciem.",
+                "c) Wytwarzanie sterowane jakością.",
+                "d) Wytwarzanie sterowane cechami."
+            ],
+            "correctIndex": 0,
+            "justification": "<strong>Odpowiedź a jest poprawna.</strong> Wytwarzanie sterowane testami (TDD) to ogólnie znany przykład podejścia typu „najpierw test”[cite: 270]."
+        },
+        {
+            "question": "Które z poniższych stwierdzeń dotyczące metodyki DevOps jest POPRAWNE?",
+            "options": [
+                "a) Stosowana jest ciągła integracja zachęcająca do szybkiego przekazywania kodu bez pełnego testowania modułowego.",
+                "b) Wymagane jest opracowanie wielu automatycznych testów regresji, które pozwalają zmniejszyć ryzyko związane z regresją.",
+                "c) Testerzy poświęcą więcej czasu na testowanie wydań przez grupę eksploatacji z wykorzystaniem podejścia 'przesunięcie w prawo'.",
+                "d) Należy w pełni zautomatyzować testowanie i zrezygnować z testów manualnych."
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Metodyka DevOps wzbogaca testowanie m.in. poprzez zmniejszenie ryzyka związanego z regresją dzięki automatycznym testom regresji[cite: 281]."
+        },
+        {
+            "question": "Które z poniższych działań zostanie z NAJWIĘKSZYM prawdopodobieństwem wykonane w ramach testowania systemowego?",
+            "options": [
+                "a) Testowanie zabezpieczeń systemu zarządzania kredytami przez niezależny zespół testowy.",
+                "b) Testowanie interfejsu systemu wymiany walut z zewnętrznym systemem bankowym.",
+                "c) Testy beta systemu zdalnego nauczania prowadzone przez twórców oprogramowania.",
+                "d) Testowanie interakcji między interfejsem użytkownika i bazą danych w systemie kadrowym."
+            ],
+            "correctIndex": 0,
+            "justification": "<strong>Odpowiedź a jest poprawna.</strong> Testowanie systemowe bada zachowanie całego systemu i obejmuje testowanie niefunkcjonalne, m.in. testy zabezpieczeń[cite: 304]."
+        },
+        {
+            "question": "Które z poniższych stwierdzeń dotyczących testowania regresji i potwierdzającego jest POPRAWNE?",
+            "options": [
+                "a) Liczba testów regresji rośnie, natomiast liczba testów potwierdzających maleje w miarę postępów projektu.",
+                "b) Testy regresji są uruchamiane po poprawkach, a testy potwierdzające po udoskonaleniach przedmiotu testów.",
+                "c) Testowanie regresji sprawdza czy nie zmieniło się środowisko operacyjne, a potwierdzające zmiany w przedmiocie testów.",
+                "d) Testowanie regresji uwzględnia negatywne konsekwencje w niezmienionym kodzie, natomiast potwierdzające wiąże się z testowaniem zmienionego kodu."
+            ],
+            "correctIndex": 3,
+            "justification": "<strong>Odpowiedź d jest poprawna.</strong> Testowanie regresji pozwala sprawdzić, czy zmiany nie spowodowały negatywnych skutków w oprogramowaniu, które nie było modyfikowane[cite: 318]."
+        },
+        {
+            "question": "Która odpowiedź przedstawia przykład defektu, który można znaleźć za pomocą testowania statycznego, a NIE dynamicznego?",
+            "options": [
+                "a) Brak użyteczności interfejsu użytkownika.",
+                "b) Nieosiągalny kod.",
+                "c) Długi czas odpowiedzi w przypadku większości użytkowników.",
+                "d) Brak implementacji wymaganych cech w kodzie."
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> W przeglądzie kodu można wykryć fragmenty, do których nie prowadzi żadna ścieżka; testy dynamiczne sprawdzają tylko kod wykonywalny[cite: 327]."
+        },
+        {
+            "question": "Która z poniższych korzyści wynika z wczesnego i częstego otrzymywania informacji zwrotnych przez interesariuszy?",
+            "options": [
+                "a) Kierownicy wiedzą, którzy programiści charakteryzują się mniejszą produktywnością.",
+                "b) Kierownicy projektów mogą określić priorytety interakcji z różnymi interesariuszami.",
+                "c) Możliwe jest wczesne sygnalizowanie potencjalnych problemów związanych z jakością.",
+                "d) Użytkownicy końcowi lepiej rozumieją przyczyny opóźnień w dostarczeniu produktów pracy."
+            ],
+            "correctIndex": 2,
+            "justification": "<strong>Odpowiedź c jest poprawna.</strong> Częste informacje zwrotne umożliwiają wczesne sygnalizowanie problemów z jakością i zapobiegają nieporozumieniom[cite: 338]."
+        },
+        {
+            "question": "Dopasuj zadania (1.Wybór charakterystyk/kryteriów, 2.Dostęp dla uczestników, 3.Zidentyfikowanie anomalii, 4.Omówienie anomalii) do czynności (A.Review indyw., B.Rozpoczęcie, C.Planowanie, D.Przekazanie info).",
+            "options": [
+                "a) 1B, 2C, 3D, 4A",
+                "b) 1B, 2D, 3C, 4A",
+                "c) 1C, 2A, 3B, 4D",
+                "d) 1C, 2B, 3A, 4D"
+            ],
+            "correctIndex": 3,
+            "justification": "<strong>Odpowiedź d jest poprawna.</strong> Poprawne powiązanie to: Planowanie (1C), Rozpoczęcie (2B), Przegląd indywidualny (3A) oraz Przekazanie informacji i analiza (4D)[cite: 352]."
+        },
+        {
+            "question": "Dopasuj role (1.Protokolant, 2.Lider, 3.Facylitator, 4.Kierownik) do obowiązków review.",
+            "options": [
+                "a) 1A, 2B, 3D, 4C",
+                "b) 1A, 2C, 3B, 4D",
+                "c) 1B, 2D, 3A, 4C",
+                "d) 1B, 2D, 3C, 4A"
+            ],
+            "correctIndex": 2,
+            "justification": "<strong>Odpowiedź c jest poprawna.</strong> Protokolant rejestruje info (1B), Lider nadzoruje proces (2D), Facylitator dba o przebieg spotkań (3A), a Kierownik przydziela zasoby (4C)[cite: 361, 376]."
+        },
+        {
+            "question": "Które z poniższych stwierdzeń NAJLEPIEJ opisuje różnicę między testowaniem w oparciu o tablicę decyzyjną i testowaniem gałęzi?",
+            "options": [
+                "a) Tablica: na podstawie kodu; Gałęzie: na podstawie przepływu sterowania.",
+                "b) Tablica: na podstawie specyfikacji logiki; Gałęzie: na podstawie przewidywania defektów.",
+                "c) Tablica: na podstawie przepływu sterowania; Gałęzie: na podstawie specyfikacji logiki.",
+                "d) Tablica: niezależne od implementacji; Gałęzie: zależne od zaprojektowanego kodu."
+            ],
+            "correctIndex": 3,
+            "justification": "<strong>Odpowiedź d jest poprawna.</strong> Tablica decyzyjna to technika czarnoskrzynkowa, a testowanie gałęzi to technika białoskrzynkowa oparta na analizie kodu [cite: 377, 387-389]."
+        },
+        {
+            "question": "W myjni TestWash system przyznaje upust 10% przy dziesiątym umyciu i 50% przy dwudziestym. Który zestaw wejść (numer usługi) daje największe pokrycie klas równoważności?",
+            "options": [
+                "a) 19, 20, 30",
+                "b) 11, 12, 20",
+                "c) 1, 10, 50",
+                "d) 10, 29, 30, 31"
+            ],
+            "correctIndex": 0,
+            "justification": "<strong>Odpowiedź a jest poprawna.</strong> Wartość 19 pokrywa klasę „brak upustu”, 20 klasę „50% upustu”, a 30 klasę „10% upustu” (dziesiąte umycie przy powielaniu)[cite: 400]."
+        }
+    ],
+    "Zbiór C (11-20)": [
+        {
+            "question": "Które z poniższych stwierdzeń przedstawia NAJLEPSZY opis podejścia „przesunięcie w lewo”?",
+            "options": [
+                "a) Czynności manualne po lewej stronie procesu testowego podlegają automatyzacji.",
+                "b) Wykonanie czynności testowych przesuwa się do wcześniejszych faz cyklu w celu zmniejszenia kosztów zapewnienia jakości.",
+                "c) Testerzy automatyzują testy regresji zaczynając od testów modułowych, gdy mają wolny czas.",
+                "d) Testerzy szkolą się na wczesnych etapach, aby później zautomatyzować więcej czynności."
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Zasada przesunięcia w lewo kładzie nacisk na rozpoczęcie testów na wczesnych etapach cyklu życia[cite: 924]."
+        },
+        {
+            "question": "Który z poniższych efektów z NAJMNIEJSZYM prawdopodobieństwem wystąpi po przeprowadzeniu retrospektywy?",
+            "options": [
+                "a) Podniesienie jakości kolejnych produktów dzięki usprawnieniu praktyk programistycznych.",
+                "b) Wzrost efektywności testowania dzięki skróceniu czasu konfigurowania środowisk.",
+                "c) Lepsze zrozumienie przez użytkowników końcowych procesów wytwarzania i testowania.",
+                "d) Udoskonalenie skryptów automatycznych dzięki informacjom od programistów."
+            ],
+            "correctIndex": 2,
+            "justification": "<strong>Odpowiedź c jest poprawna.</strong> Użytkownicy końcowi rzadko uczestniczą w retrospektywach, więc mało prawdopodobne, by lepiej zrozumieli procesy[cite: 937]."
+        },
+        {
+            "question": "Który poziom testów skupia się na walidacji i w idealnym przypadku nie jest realizowany przez testerów lecz użytkowników?",
+            "options": [
+                "a) Testowanie modułowe.",
+                "b) Testowanie integracji modułów.",
+                "c) Testowanie integracji systemów.",
+                "d) Testowanie akceptacyjne."
+            ],
+            "correctIndex": 3,
+            "justification": "<strong>Odpowiedź d jest poprawna.</strong> Testowanie akceptacyjne skupia się na walidacji i wykazaniu gotowości systemu do wdrożenia biznesowego[cite: 950]."
+        },
+        {
+            "question": "Oprogramowanie nawigacji poprawiono (trasy pod prąd). Która odpowiedź NAJLEPIEJ opisuje testy, które należy przeprowadzić?",
+            "options": [
+                "a) Tylko testowanie potwierdzające.",
+                "b) Testowanie potwierdzające, a następnie testowanie regresji.",
+                "c) Tylko testowanie regresji.",
+                "d) Testowanie regresji, a następnie testowanie potwierdzające."
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Potwierdzające ustala poprawność poprawki, a regresji sprawdza, czy nie wprowadzono błędów w innych obszarach[cite: 962]."
+        },
+        {
+            "question": "Wskaż zestaw defektów (1.Niezgodność specyfikacji, 2.Długi czas odpowiedzi, 3.Nieosiągalny kod, 4.Nieużywana zmienna, 5.Nadmierna pamięć), które można znaleźć statycznie.",
+            "options": [
+                "a) 2, 5",
+                "b) 3, 5",
+                "c) 1, 2, 4",
+                "d) 1, 3, 4"
+            ],
+            "correctIndex": 3,
+            "justification": "<strong>Odpowiedź d jest poprawna.</strong> Niezgodność specyfikacji (1) oraz anomalie w kodzie jak nieosiągalność (3) czy nieużywane zmienne (4) są wykrywane statycznie[cite: 975]."
+        },
+        {
+            "question": "Która z poniższych jest korzyścią wynikającą z wczesnego i częstego otrzymywania informacji zwrotnych?",
+            "options": [
+                "a) Zmiany w wymaganiach są lepiej rozumiane i wcześniej wprowadzane.",
+                "b) Zapewnienie, że interesariusze biznesowi rozumieją wymagania użytkownika.",
+                "c) Możliwość wprowadzania przez właścicieli produktów zmian w dowolnym momencie.",
+                "d) Poinformowanie użytkowników końcowych o wymaganiach, które nie zostaną wdrożone."
+            ],
+            "correctIndex": 0,
+            "justification": "<strong>Odpowiedź a jest poprawna.</strong> Częste informacje zwrotne umożliwiają lepsze zrozumienie i szybsze wprowadzanie zmian w wymaganiach[cite: 987]."
+        },
+        {
+            "question": "Dopasuj review (1.Techniczny, 2.Nieformalny, 3.Inspekcja, 4.Przejrzenie) do opisów celów.",
+            "options": [
+                "a) 1A, 2B, 3C, 4D",
+                "b) 1A, 2D, 3C, 4B",
+                "c) 1B, 2C, 3D, 4A",
+                "d) 1C, 2D, 3A, 4B"
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Pary to: Techniczny (1A), Nieformalny (2D), Inspekcja (3C), Przejrzenie (4B)[cite: 1015]."
+        },
+        {
+            "question": "Która odpowiedź opisuje czynnik wpływający na powodzenie przeglądu?",
+            "options": [
+                "a) Udział kierownictwa jako przeglądających.",
+                "b) Podział dużych produktów pracy na mniejsze fragmenty.",
+                "c) Dodanie oceny uczestników do listy celów.",
+                "d) Planowanie przeglądu obejmującego tylko jeden dokument."
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Podział na partie umożliwia uczestnikom skupienie się podczas przeglądu indywidualnego[cite: 1029]."
+        },
+        {
+            "question": "Jaka jest GŁÓWNA różnica między czarnoskrzynkowymi technikami i technikami opartymi na doświadczeniu?",
+            "options": [
+                "a) Przedmiot testów.",
+                "b) Poziom testów.",
+                "c) Podstawa testów.",
+                "d) Cykl wytwarzania oprogramowania."
+            ],
+            "correctIndex": 2,
+            "justification": "<strong>Odpowiedź c jest poprawna.</strong> Black-box bazuje na specyfikacji (podstawa), a techniki oparte na doświadczeniu na wiedzy testera[cite: 1038]."
+        },
+        {
+            "question": "Moduł PIN (4 cyfry, min. 2 różne). Który zestaw danych pokrywa wszystkie klasy równoważności?",
+            "options": [
+                "a) 112, 1111, 1234, 123456",
+                "b) 1, 123, 1111, 1234",
+                "c) 12, 112, 1112, 11112",
+                "d) 1, 111, 1111, 11111."
+            ],
+            "correctIndex": 0,
+            "justification": "<strong>Odpowiedź a jest poprawna.</strong> Zestaw ten pokrywa: PIN 1-3 cyfry (112), 4 cyfry identyczne (1111), poprawny PIN (1234) i PIN >4 cyfry (123456)[cite: 1051]."
+        }
+    ],
+    "Zbiór D (11-20)": [
+        {
+            "question": "Która z poniższych odpowiedzi opisuje wyzwanie w trakcie stosowania metodyki DevOps?",
+            "options": [
+                "a) Zadbanie o niefunkcjonalne charakterystyki jakościowe.",
+                "b) Zarządzanie stabilnymi środowiskami testowymi.",
+                "c) Zatrudnienie dodatkowych testerów do testów manualnych.",
+                "d) Skonfigurowanie testów automatycznych w ramach potoku dostarczania (pipeline)."
+            ],
+            "correctIndex": 3,
+            "justification": "<strong>Odpowiedź d jest poprawna.</strong> Wyzwaniem jest zdefiniowanie potoku dostarczania oraz utrzymywanie automatyzacji testów[cite: 1571]."
+        },
+        {
+            "question": "Które z podanych określeń NAJLEPIEJ opisuje retrospektywy?",
+            "options": [
+                "a) Wskazanie osób, które za mało uczestniczyły w doskonaleniu jakości.",
+                "b) Zidentyfikowanie działań pomyślnych do zachowania oraz obszarów do udoskonalenia.",
+                "c) Okazja do krytykowania kierownictwa i klientów.",
+                "d) Forum do dyskusji technicznej o następnej iteracji."
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Grupa omawia sukcesy oraz sposoby wprowadzania udoskonaleń w procesie[cite: 1583]."
+        },
+        {
+            "question": "Który z poniższych testów zostanie wykonany w ramach testowania funkcjonalnego?",
+            "options": [
+                "a) Sprawdzenie, czy funkcja sortowania porządkuje elementy rosnąco.",
+                "b) Ustalenie, czy funkcja sortowania zakończy działanie w ciągu sekundy.",
+                "c) Sprawdzenie łatwości zmiany kolejności sortowania.",
+                "d) Sprawdzenie poprawności po przejściu z architektury 32 na 64-bitową."
+            ],
+            "correctIndex": 0,
+            "justification": "<strong>Odpowiedź a jest poprawna.</strong> Badanie poprawności wyników funkcji sortowania dotyczy jej poprawności funkcjonalnej[cite: 1596]."
+        },
+        {
+            "question": "Zdarzenie wyzwalające testowanie pielęgnacyjne systemu wymiany walut to:",
+            "options": [
+                "a) Trudność z modyfikacją zgłoszona przez programistów.",
+                "b) Usunięcie opcji zwrotu środków z powodu błędów kwot u klientów.",
+                "c) Rozpoczęcie prac nad nową historyjką lojalnościową.",
+                "d) Zmiana konfiguracji dla obsługi języka angielskiego i lokalnego."
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Wprowadzenie modyfikacji (poprawki/usuniecia opcji) wyzwala testowanie pielęgnacyjne[cite: 1609]."
+        },
+        {
+            "question": "Który element NIE może zostać sprawdzony za pomocą testowania statycznego?",
+            "options": [
+                "a) Umowa.",
+                "b) Plan testów.",
+                "c) Zaszyfrowany kod.",
+                "d) Karta opisu testu."
+            ],
+            "correctIndex": 2,
+            "justification": "<strong>Odpowiedź c jest poprawna.</strong> Zaszyfrowany kod jest zbyt złożony dla ludzi i większości narzędzi analitycznych[cite: 1621]."
+        },
+        {
+            "question": "Które stwierdzenie o korzyściach testowania statycznego jest POPRAWNE?",
+            "options": [
+                "a) Wykrywa inne typy defektów niż dynamiczne.",
+                "b) Dynamiczne wykrywa wszystkie defekty co statyczne plus inne.",
+                "c) Dynamiczne wykrywa niektóre defekty wykrywane statycznie, ale nie wszystkie.",
+                "d) Statyczne wykrywa wszystkie defekty wykrywane dynamicznie plus inne."
+            ],
+            "correctIndex": 2,
+            "justification": "<strong>Odpowiedź c jest poprawna.</strong> Istnieją defekty wykrywalne tylko statycznie (np. nieosiągalny kod) oraz tylko dynamicznie (np. wydajność)[cite: 1634]."
+        },
+        {
+            "question": "Ułóż w kolejności czynności review: 1.Omówienie anomalii, 2.Zarejestrowanie problemów, 3.Wykrywanie anomalii technikami, 4.Cel i harmonogram, 5.Udostępnienie uczestnikom.",
+            "options": [
+                "a) 4-3-5-2-1",
+                "b) 4-5-3-1-2",
+                "c) 5-4-1-3-2",
+                "d) 5-4-3-2-1"
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Prawidłowa sekwencja to: planowanie (4), rozpoczęcie (5), przegląd indywidualny (3), przekazanie informacji i analiza (1), usunięcie defektów i raportowanie (2)[cite: 1648]."
+        },
+        {
+            "question": "Który uczestnik przeglądu zapewnia bezpieczne warunki do wyrażania zdania i dba o sprawny przebieg spotkań?",
+            "options": [
+                "a) Kierownik",
+                "b) Moderator",
+                "c) Przewodniczący",
+                "d) Lider przeglądu"
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Moderator (facylitator) zarządza czasem i zapewnia swobodę wypowiedzi uczestników[cite: 1661]."
+        },
+        {
+            "question": "Reguła: Zakupy > 100 PLN = 5% upustu. Która technika będzie NAJBARDZIEJ przydatna do projektowania testów?",
+            "options": [
+                "a) Białoskrzynkowe techniki testowania.",
+                "b) Czarnoskrzynkowe techniki testowania.",
+                "c) Techniki testowania oparte na doświadczeniu.",
+                "d) Techniki testowania oparte na ryzyku."
+            ],
+            "correctIndex": 1,
+            "justification": "<strong>Odpowiedź b jest poprawna.</strong> Dokumentacja definiuje zachowanie (regułę biznesową), dlatego techniki czarnoskrzynkowe (jak BVA) są tu najwłaściwsze[cite: 1674]."
+        },
+        {
+            "question": "System zniżek (RU-Rok Urodzenia, RB-Rok Bieżący). D=RB-RU. Brak zniżki (18<=D<65) i błąd (D<0) już pokryte. Jakie zestawy (RU, RB) dodać do pełnego pokrycia?",
+            "options": [
+                "a) RU=2001, RB=2065",
+                "b) RU=1900, RB=1965",
+                "c) RU=1965, RB=1900",
+                "d) RU=2011, RB=2029",
+                "e) RU=2000, RB=2000"
+            ],
+            "correctIndex": [
+                1,
+                4
+            ],
+            "justification": "<strong>Odpowiedzi b i e są poprawne.</strong> RU=1900, RB=1965 daje wiek 65 (zniżka dla emerytów), a RU=2000, RB=2000 daje wiek 0 (zniżka dla uczniów)[cite: 1687]."
+        }
+    ]
+}
