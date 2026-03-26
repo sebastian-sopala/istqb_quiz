@@ -1,0 +1,754 @@
+{
+    "Zbiór A (1-10)": [
+        {
+            "question": "Która z poniższych odpowiedzi opisuje poprawny cel testów?",
+            "options": [
+                "a) Udowodnienie, że w systemie podlegającym testowaniu nie występują żadne nieusunięte defekty.",
+                "b) Udowodnienie, że po wprowadzeniu systemu do eksploatacji nie będą występowały żadne awarie.",
+                "c) Obniżenie poziomu ryzyka związanego z przedmiotem testów i zwiększenie zaufania do jego jakości.",
+                "d) Sprawdzenie, czy nie pozostały żadne nieprzetestowane kombinacje danych wejściowych."
+            ],
+            "correctIndex": 2,
+            "justification": "Testowanie pozwala wykryć defekty i awarie, co przekłada się na obniżenie poziomu ryzyka, a jednocześnie na zwiększenie zaufania do jakości przedmiotu testów[cite: 5734]."
+        },
+        {
+            "question": "Które z poniższych stwierdzeń zawiera przykład czynności testowych, które przyczyniają się do powodzenia projektu?",
+            "options": [
+                "a) Zaangażowanie testerów w różne działania SDLC pomaga wykryć defekty w produktach pracy.",
+                "b) Testerzy starają się nie przeszkadzać programistom na etapie pisania kodu.",
+                "c) Współpraca testerów z użytkownikami pozwala podnieść jakość raportów o defektach.",
+                "d) Certyfikowani testerzy projektują znacznie lepsze przypadki testowe."
+            ],
+            "correctIndex": 0,
+            "justification": "Zaangażowanie testerów od samego początku SDLC sprzyja wczesnemu wykrywaniu defektów[cite: 5747]."
+        },
+        {
+            "question": "Rozpoczynasz pracę w zespole przyrostowym. Nie wprowadzono zmian w testach regresji od kilku iteracji i nie znaleziono nowych błędów. Jaka zasada to uzasadnia?",
+            "options": [
+                "a) Testy ulegają zużyciu.",
+                "b) Przekonanie o braku defektów jest błędem.",
+                "c) Defekty mogą się kumulować.",
+                "d) Testowanie gruntowne jest niemożliwe."
+            ],
+            "correctIndex": 0,
+            "justification": "Ciągłe powtarzanie tych samych testów prowadzi do sytuacji, w której przestają one wykrywać nowe defekty[cite: 5757]."
+        },
+        {
+            "question": "Która z wymienionych czynności jest elementem analizy testów?",
+            "options": [
+                "a) Oszacowanie czasu pracy.",
+                "b) Definiowanie warunków testowych.",
+                "c) Zastosowanie BVA do danych.",
+                "d) Zgłaszanie defektów dynamicznych."
+            ],
+            "correctIndex": 1,
+            "justification": "Definiowanie warunków testowych wchodzi w zakres analizy testów[cite: 5757]."
+        },
+        {
+            "question": "Które czynniki mają ISTOTNY wpływ na podejście do testów? (i. Ryzyka produktowe, ii. SDLC, iii. Liczba defektów wcześniej, iv. Wymagania prawne, v. Konfiguracja środowiska)",
+            "options": [
+                "a) i oraz ii",
+                "b) i, iii oraz iv",
+                "c) ii, iv oraz v",
+                "d) iii oraz v"
+            ],
+            "correctIndex": 1,
+            "justification": "Ryzyka produktowe, wymagania prawne oraz dane historyczne o defektach są kluczowe[cite: 5768]."
+        },
+        {
+            "question": "Wskaż DWA zadania przypisane GŁÓWNIE do roli związanej z testowaniem.",
+            "options": [
+                "a) Konfigurowanie środowiska",
+                "b) Prowadzenie backlogu",
+                "c) Projektowanie rozwiązań",
+                "d) Plan testów",
+                "e) Analizowanie podstawy testów"
+            ],
+            "correctIndex": [
+                0,
+                4
+            ],
+            "justification": "Konfigurowanie środowiska oraz techniczna analiza podstawy testów to obowiązki testera[cite: 5768]."
+        },
+        {
+            "question": "Które z poniższych umiejętności są NAJBARDZIEJ ISTOTNE w pracy testera?",
+            "options": [
+                "a) ii oraz iv",
+                "b) i, iii oraz iv",
+                "c) i, ii oraz v",
+                "d) iii oraz iv"
+            ],
+            "correctIndex": 1,
+            "justification": "Wiedza merytoryczna, praca w zespole oraz krytyczne myślenie są kluczowe[cite: 5780]."
+        },
+        {
+            "question": "W jaki sposób podejście „cały zespół” uwidacznia się w kontaktach testerów z biznesem?",
+            "options": [
+                "a) Biznes decyduje o automatyzacji.",
+                "b) Testerzy określają strategię.",
+                "c) Biznes nie jest objęty tym podejściem.",
+                "d) Wsparcie w tworzeniu testów akceptacyjnych."
+            ],
+            "correctIndex": 3,
+            "justification": "Testerzy współpracują z przedstawicielami biznesu przy tworzeniu testów akceptacyjnych[cite: 5792]."
+        },
+        {
+            "question": "Zasada: „Każda czynność wytwarzania (SDLC) ma odpowiadającą czynność testową” obowiązuje w:",
+            "options": [
+                "a) Modelu sekwencyjnym.",
+                "b) Modelu iteracyjnym.",
+                "c) Iteracyjnym i przyrostowym.",
+                "d) Wszystkich modelach SDLC."
+            ],
+            "correctIndex": 3,
+            "justification": "Ta reguła odnosi się do wszystkich modeli cyklu wytwarzania oprogramowania[cite: 5804]."
+        },
+        {
+            "question": "Które stwierdzenie NAJLEPIEJ opisuje ATDD?",
+            "options": [
+                "a) Format Given/When/Then.",
+                "b) Tworzenie testów modułowych.",
+                "c) Testy pisane na podstawie kryteriów akceptacji.",
+                "d) Testy oparte na zachowaniu."
+            ],
+            "correctIndex": 2,
+            "justification": "W ATDD testy są pisane na podstawie kryteriów akceptacji w ramach projektowania[cite: 5804]."
+        }
+    ],
+    "Zbiór B (1-10)": [
+        {
+            "question": "Przykładowe powody, dla których testowanie jest niezbędne:",
+            "options": [
+                "a) Dynamiczne wywołuje awarie nieosiągalne.",
+                "b) Statyczne wykrywa awarie wcześniej.",
+                "c) Analiza potwierdza gotowość elementów bez wyjść.",
+                "d) Przeglądy zwiększają jakość specyfikacji."
+            ],
+            "correctIndex": 3,
+            "justification": "Przeglądy pozwalają usunąć błędy w wymaganiach przed ich implementacją[cite: 121]."
+        },
+        {
+            "question": "Stwierdzenie poprawne o QA i QC:",
+            "options": [
+                "a) QA jest częścią testów.",
+                "b) Testowanie jest częścią QC.",
+                "c) Testowanie to to samo co QC.",
+                "d) Testowanie to część QA."
+            ],
+            "correctIndex": 1,
+            "justification": "QC skupia się na identyfikacji defektów produktu; testowanie jest jego kluczową częścią[cite: 144]."
+        },
+        {
+            "question": "Zasada 'Testowanie gruntowne jest niemożliwe'. Przykład praktyczny:",
+            "options": [
+                "a) Pokrycie wszystkich wyjść.",
+                "b) Dokumentowanie wszystkich wejść.",
+                "c) Wczesne testowanie statyczne.",
+                "d) Użycie klas równoważności i BVA."
+            ],
+            "correctIndex": 3,
+            "justification": "Techniki te pozwalają na systematyczny wybór skończonego podzbioru testów[cite: 170]."
+        },
+        {
+            "question": "Czynność testowa obejmująca dane, warunki, środowisko i przypadki to:",
+            "options": [
+                "a) Projektowanie testów.",
+                "b) Wykonywanie testów.",
+                "c) Analiza testów.",
+                "d) Implementacja testów."
+            ],
+            "correctIndex": 0,
+            "justification": "Projektowanie testów używa warunków do tworzenia przypadków i specyfikuje infrastrukturę[cite: 179]."
+        },
+        {
+            "question": "Element wpływający W NAJWIĘKSZYM STOPNIU na sposób testowania:",
+            "options": [
+                "a) Doświadczenie marketingu.",
+                "b) Wiedza użytkowników o budowie.",
+                "c) Doświadczenie zespołu testowego.",
+                "d) Struktura użytkowników końcowych."
+            ],
+            "correctIndex": 2,
+            "justification": "Umiejętności zespołu (np. znajomość narzędzi) determinują sposób prowadzenia testów[cite: 202]."
+        },
+        {
+            "question": "Przykład korzyści ze śledzenia powiązań:",
+            "options": [
+                "a) Powiązanie ryzyk z testami określa ryzyko rezydualne.",
+                "b) Powiązanie wymagań z rezultatami mierzy postępy biznesowe.",
+                "c) Powiązanie testerów z błędami.",
+                "d) Wybór ryzyk do testów."
+            ],
+            "correctIndex": 1,
+            "justification": "Traceability pozwala mierzyć realizację celów biznesowych przez testy[cite: 216]."
+        },
+        {
+            "question": "Wykorzystanie ogólnych umiejętności przez testera:",
+            "options": [
+                "a) Znajomość rynku gier.",
+                "b) Były pilot rozumie kryteria sterowania.",
+                "c) Były koder rozmawia z analitykiem.",
+                "d) Metodyczne generowanie przypadków."
+            ],
+            "correctIndex": 1,
+            "justification": "Wiedza merytoryczna pozwala lepiej ocenić kryteria akceptacji[cite: 224]."
+        },
+        {
+            "question": "Zaleta podejścia „cały zespół”:",
+            "options": [
+                "a) Dowolna rola dla każdego.",
+                "b) Tylko jeden zespół dla projektu.",
+                "c) Biznes podejmuje decyzje techniczne.",
+                "d) Tworzy efekt synergii."
+            ],
+            "correctIndex": 3,
+            "justification": "Wykorzystanie różnych kompetencji zwiększa dynamikę i synergię zespołu[cite: 236]."
+        },
+        {
+            "question": "Które stwierdzenie o cyklu wytwarzania jest POPRAWNE?",
+            "options": [
+                "a) Agile nie potrzebuje regresji.",
+                "b) Model sekwencyjny ma testy dynamiczne później.",
+                "c) Iteracyjny model ma testy modułowe manualne.",
+                "d) Przyrostowy model: statyczne najpierw."
+            ],
+            "correctIndex": 1,
+            "justification": "W modelach sekwencyjnych kod wykonywalny jest dostępny dopiero w późniejszych fazach[cite: 247]."
+        },
+        {
+            "question": "Dobra praktyka dla wszystkich cykli wytwarzania:",
+            "options": [
+                "a) Przegląd w następnej fazie.",
+                "b) Przegląd po udostępnieniu wersji roboczych.",
+                "c) Przegląd przed analizą testów.",
+                "d) Przegląd po publikacji."
+            ],
+            "correctIndex": 1,
+            "justification": "Wczesny przegląd roboczy wspiera podejście 'shift left'[cite: 258]."
+        }
+    ],
+    "Zbiór C (1-10)": [
+        {
+            "question": "Typowy cel testów to:",
+            "options": [
+                "a) Walidacja specyfikacji.",
+                "b) Powodowanie awarii i znajdowanie defektów.",
+                "c) Inicjowanie błędów.",
+                "d) Weryfikacja oczekiwań użytkowników."
+            ],
+            "correctIndex": 1,
+            "justification": "Wykrywanie defektów poprzez awarie to główny cel testowania dynamicznego[cite: 760]."
+        },
+        {
+            "question": "Różnica między testowaniem i debugowaniem:",
+            "options": [
+                "a) Usuwanie vs wywoływanie awarii.",
+                "b) Negatywne vs pozytywne.",
+                "c) Stwierdzanie vs usuwanie defektów.",
+                "d) Znajdowanie vs usuwanie przyczyn."
+            ],
+            "correctIndex": 2,
+            "justification": "Testowanie wykrywa błędy, a debugowanie (programiści) je usuwa[cite: 772]."
+        },
+        {
+            "question": "Zasada: 'Przekonanie o braku defektów jest błędem'. Przykład:",
+            "options": [
+                "a) Testy nie dowodzą braku defektów.",
+                "b) Wsparcie użytkowników w testach akceptacyjnych.",
+                "c) Brak błędów implementacji.",
+                "d) Modyfikacja testów by zostały błędy."
+            ],
+            "correctIndex": 1,
+            "justification": "Walidacja potrzeb użytkownika jest konieczna poza samą weryfikacją zgodności[cite: 785]."
+        },
+        {
+            "question": "W których czynnościach użyjesz BVA i klas równoważności?",
+            "options": [
+                "a) Implementacja.",
+                "b) Projektowanie.",
+                "c) Wykonywanie.",
+                "d) Monitorowanie.",
+                "e) Analiza."
+            ],
+            "correctIndex": [
+                1,
+                4
+            ],
+            "justification": "Techniki te służą do identyfikacji warunków (Analiza) i przypadków (Projektowanie)[cite: 810]."
+        },
+        {
+            "question": "Powiąż testalia: 1.Elementy pokrycia, 2.Zmiany, 3.Harmonogram, 4.Warunki z: A.Analiza, B.Projektowanie, C.Implementacja, D.Ukończenie.",
+            "options": [
+                "a) 1B, 2D, 3C, 4A",
+                "b) 1B, 2D, 3A, 4C",
+                "c) 1D, 2C, 3A, 4B",
+                "d) 1D, 2C, 3B, 4A"
+            ],
+            "correctIndex": 0,
+            "justification": "Warunki (Analiza), Elementy (Projektowanie), Harmonogram (Implementacja), Zmiany (Ukończenie)[cite: 836]."
+        },
+        {
+            "question": "Role w testowaniu - co jest POPRAWNE?",
+            "options": [
+                "a) Agile: wykonanie przez kogoś z zewnątrz.",
+                "b) Tester odpowiada za nadzór.",
+                "c) Kierownik testów spoza zespołu może zarządzać w agile.",
+                "d) Kierownik odpowiada za projektowanie."
+            ],
+            "correctIndex": 2,
+            "justification": "Zadania obejmujące kilka zespołów w agile mogą pełnić zewnętrzni managerowie[cite: 848]."
+        },
+        {
+            "question": "Zaleta podejścia „cały zespół”:",
+            "options": [
+                "a) Zespoły bez testerów.",
+                "b) Zwiększenie dynamiki pracy.",
+                "c) Specjalizacja członków.",
+                "d) Większe zespoły."
+            ],
+            "correctIndex": 1,
+            "justification": "Usprawniona współpraca i wymiana informacji to główne zalety tego modelu[cite: 861]."
+        },
+        {
+            "question": "Prawdziwe o niezależności testowania:",
+            "options": [
+                "a) Inne punkty widzenia wykrywają inne błędy.",
+                "b) Programiści nie znajdują błędów.",
+                "c) Wymaga testerów spoza organizacji.",
+                "d) Zespół zewnętrzny nie jest obarczany winą."
+            ],
+            "correctIndex": 0,
+            "justification": "Niezależni testerzy podchodzą do produktu bez błędów poznawczych autorów[cite: 874]."
+        },
+        {
+            "question": "Dobra praktyka dla wszystkich cykli wytwarzania:",
+            "options": [
+                "a) Poziom testów = poziom wytwarzania.",
+                "b) Cel testów = cel wytwarzania.",
+                "c) Testy = czynności użytkownika.",
+                "d) Czynność wytwarzania = czynność testowa."
+            ],
+            "correctIndex": 3,
+            "justification": "Z każdą czynnością tworzenia kodu powinna wiązać się kontrola jakości[cite: 900]."
+        },
+        {
+            "question": "Przykład podejścia „najpierw test”:",
+            "options": [
+                "a) TDD modułowe.",
+                "b) TDD integracyjne.",
+                "c) TDD systemowe.",
+                "d) TDD akceptacyjne (ATDD)."
+            ],
+            "correctIndex": 3,
+            "justification": "ATDD to klasyczny przykład definiowania testów przed kodowaniem[cite: 912]."
+        }
+    ],
+    "Zbiór D (1-10)": [
+        {
+            "question": "Typowy cel testów to:",
+            "options": [
+                "a) Znajdowanie i usuwanie błędów.",
+                "b) Komunikacja z koderami.",
+                "c) Walidacja wymagań prawnych.",
+                "d) Budowanie zaufania do jakości."
+            ],
+            "correctIndex": 3,
+            "justification": "Pomyślne przejście testów zwiększa pewność co do jakości produktu[cite: 1441]."
+        },
+        {
+            "question": "Pomyłka programisty pod presją czasu spowodowała defekt. Kara finansowa to:",
+            "options": [
+                "a) Błędne liczenie to defekt.",
+                "b) Kara to awaria.",
+                "c) Przyczyna to presja czasu.",
+                "d) Projekt to błąd."
+            ],
+            "correctIndex": 2,
+            "justification": "Praca pod presją jest podstawową przyczyną błędu (root cause)[cite: 1454]."
+        },
+        {
+            "question": "Zmienne przypadki testowe przy stałych warunkach realizują zasadę:",
+            "options": [
+                "a) Testy ulegają zużyciu.",
+                "b) Błąd braku defektów.",
+                "c) Wczesne testowanie.",
+                "d) Kumulacja błędów."
+            ],
+            "correctIndex": 0,
+            "justification": "Zasada ta mówi, że powtarzanie tych samych testów przestaje wykrywać nowe błędy[cite: 1467]."
+        },
+        {
+            "question": "Powiąż: 1.Projektowanie przypadków, 2.Archiwizacja testaliów, 3.Priorytetyzacja procedur, 4.Analiza testowalności z: A.Analiza, B.Projektowanie, C.Implementacja, D.Ukończenie.",
+            "options": [
+                "a) 1B, 2A, 3D, 4C",
+                "b) 1B, 2D, 3C, 4A",
+                "c) 1C, 2A, 3B, 4D",
+                "d) 1C, 2D, 3A, 4B"
+            ],
+            "correctIndex": 1,
+            "justification": "1B (Projektowanie), 2D (Ukończenie), 3C (Implementacja), 4A (Analiza)[cite: 1480]."
+        },
+        {
+            "question": "Produkty implementacji testów to:",
+            "options": [
+                "a) ii (Dane) oraz iv (Procedury).",
+                "b) iii oraz v.",
+                "c) i, ii oraz v.",
+                "d) i, iii oraz iv."
+            ],
+            "correctIndex": 0,
+            "justification": "W implementacji powstają gotowe dane wejściowe i procedury ich wykonania[cite: 1493]."
+        },
+        {
+            "question": "Zadanie kierownika testów to:",
+            "options": [
+                "a) Analiza podstawy.",
+                "b) Wymagania środowiska.",
+                "c) Ocena testowalności.",
+                "d) Sumaryczny raport z testów."
+            ],
+            "correctIndex": 3,
+            "justification": "Opracowanie raportu zbiorczego należy do obowiązków zarządczych[cite: 1505]."
+        },
+        {
+            "question": "Zaleta „całego zespołu”:",
+            "options": [
+                "a) Wymiana informacji.",
+                "b) Mniejsza odpowiedzialność.",
+                "c) Szybkie wdrożenie.",
+                "d) Brak współpracy z biznesem."
+            ],
+            "correctIndex": 0,
+            "justification": "Bezpośrednia współpraca usprawnia komunikację wewnątrz zespołu[cite: 1518]."
+        },
+        {
+            "question": "Zalety niezależności (ii, v):",
+            "options": [
+                "a) i, iv",
+                "b) ii, v",
+                "c) i, iii, iv",
+                "d) ii, iii, v"
+            ],
+            "correctIndex": 1,
+            "justification": "Kwestionowanie założeń (ii) i inne błędy poznawcze (v) to główne zalety[cite: 1531]."
+        },
+        {
+            "question": "Dobra praktyka SDLC:",
+            "options": [
+                "a) Różne cele dla poziomów testów.",
+                "b) Implementacja w fazie wytwarzania.",
+                "c) Projektowanie na roboczo.",
+                "d) Brak testów statycznych."
+            ],
+            "correctIndex": 0,
+            "justification": "Specyficzne cele dla każdego poziomu (np. moduł vs system) zapobiegają duplikacji[cite: 1544]."
+        },
+        {
+            "question": "Przykład „najpierw test”:",
+            "options": [
+                "a) Zachowanie (BDD).",
+                "b) Poziom testów.",
+                "c) Funkcje.",
+                "d) Wydajność."
+            ],
+            "correctIndex": 0,
+            "justification": "BDD jest klasycznym podejściem typu 'test-first'[cite: 1558]."
+        }
+    ],
+    "Zbiór A - Pytania dodatkowe": [
+        {
+            "question": "Analiza i usuwanie przyczyn awarii to:",
+            "options": [
+                "a) Debugowanie.",
+                "b) Testowanie.",
+                "c) Pozyskiwanie wymagań.",
+                "d) Zarządzanie defektami."
+            ],
+            "correctIndex": 0,
+            "justification": "Proces usuwania przyczyn awarii w systemie to debugowanie[cite: 6103]."
+        },
+        {
+            "question": "QA vs Testowanie:",
+            "options": [
+                "a) To samo.",
+                "b) Wymienne.",
+                "c) Testowanie jest szersze.",
+                "d) QA to procesy, testy to produkt i defekty."
+            ],
+            "correctIndex": 3,
+            "justification": "QA zapewnia jakość procesu, testowanie kontroluje jakość produktu[cite: 6115]."
+        },
+        {
+            "question": "Złe zakodowanie logiki przez pomyłkę to:",
+            "options": [
+                "a) Root cause.",
+                "b) Awaria.",
+                "c) Pomyłka.",
+                "d) Defekt."
+            ],
+            "correctIndex": 3,
+            "justification": "Logika w kodzie jest fizyczną manifestacją błędu, czyli defektem[cite: 6115]."
+        },
+        {
+            "question": "Karta opisu testu (Test Charter) powstaje w:",
+            "options": [
+                "a) Planowaniu.",
+                "b) Monitorowaniu.",
+                "c) Analizie.",
+                "d) Projektowaniu."
+            ],
+            "correctIndex": 3,
+            "justification": "Karty te są produktem fazy projektowania testów eksploracyjnych[cite: 6127]."
+        },
+        {
+            "question": "Śledzenie powiązań pomaga w:",
+            "options": [
+                "a) Analizie wpływu zakończenia.",
+                "b) Ryzyku rezydualnym.",
+                "c) Wyborze testów regresji.",
+                "d) Wyborze danych."
+            ],
+            "correctIndex": 2,
+            "justification": "Traceability pozwala wskazać testy regresji wymagane po zmianie funkcjonalności[cite: 6127]."
+        },
+        {
+            "question": "Korzyść z niezależności testowania:",
+            "options": [
+                "a) Przeniesienie winy.",
+                "b) Odporność na terminy.",
+                "c) Brak komunikacji.",
+                "d) Kwestionowanie założeń."
+            ],
+            "correctIndex": 3,
+            "justification": "Niezależni testerzy mogą podważyć błędne interpretacje specyfikacji[cite: 6138]."
+        },
+        {
+            "question": "Model V - co na wczesnym etapie? (b, c)",
+            "options": [
+                "a) Dynamiczne",
+                "b) Statyczne",
+                "c) Planowanie",
+                "d) Akceptacyjne",
+                "e) Pielęgnacyjne"
+            ],
+            "correctIndex": [
+                1,
+                2
+            ],
+            "justification": "Statyczne testy (review) i planowanie mogą dziać się na początku SDLC[cite: 6150]."
+        },
+        {
+            "question": "Zalety DevOps: (i, iii)",
+            "options": [
+                "a) i, ii, iv",
+                "b) iii, v",
+                "c) i, iii",
+                "d) ii, iv, v"
+            ],
+            "correctIndex": 2,
+            "justification": "Szybsze wdrażanie i stała dostępność kodu to kluczowe cechy DevOps[cite: 6161]."
+        },
+        {
+            "question": "Czas < 10s. Jaki to typ testów?",
+            "options": [
+                "a) Funkcjonalne.",
+                "b) Niefunkcjonalne.",
+                "c) Interfejsowe.",
+                "d) Strukturalne."
+            ],
+            "correctIndex": 1,
+            "justification": "Testowanie czasu odpowiedzi to testowanie niefunkcjonalne (wydajność)[cite: 6175]."
+        },
+        {
+            "question": "Migracja przy wycofaniu to testowanie:",
+            "options": [
+                "a) Pielęgnacyjne.",
+                "b) Regresja.",
+                "c) Modułowe.",
+                "d) Integracyjne."
+            ],
+            "correctIndex": 0,
+            "justification": "Wycofanie systemu i migracja danych to domena testów pielęgnacyjnych[cite: 6184]."
+        },
+        {
+            "question": "Co można objąć review? (i, ii, iii, v)",
+            "options": [
+                "a) i, iv",
+                "b) i-iv",
+                "c) i, ii, iii, v",
+                "d) iii-v"
+            ],
+            "correctIndex": 2,
+            "justification": "Review dotyczy dokumentów (wymagania, budżet, historyjki), nie plików binarnych (iv)[cite: 6184]."
+        },
+        {
+            "question": "Prawda o testach statycznych: (ii, iv, v)",
+            "options": [
+                "a) i, iv, v",
+                "b) i, iii, iv",
+                "c) ii, iii",
+                "d) ii, iv, v"
+            ],
+            "correctIndex": 3,
+            "justification": "Statyczne testy wykrywają luki w pokryciu i odstępstwa od standardów kodu[cite: 6195]."
+        },
+        {
+            "question": "Przegląd formalny:",
+            "options": [
+                "a) Jedna rola.",
+                "b) Kilka czynności.",
+                "c) Brak dokumentacji wcześniej.",
+                "d) Brak zgłaszania błędów."
+            ],
+            "correctIndex": 1,
+            "justification": "Ustrukturyzowany przegląd składa się z kilku zdefiniowanych faz[cite: 6207]."
+        },
+        {
+            "question": "Kierownictwo w review decyduje o:",
+            "options": [
+                "a) Odpowiedzialności.",
+                "b) Przedmiocie przeglądu.",
+                "c) Przebiegu spotkań.",
+                "d) Protokole."
+            ],
+            "correctIndex": 1,
+            "justification": "W procesie formalnym kierownictwo wyznacza co podlega ocenie[cite: 6207]."
+        },
+        {
+            "question": "Winiarka (T=12). 3-punktowa BVA dla granic 11, 12, 13 to:",
+            "options": [
+                "a) 11, 12, 13",
+                "b) 10, 12, 14",
+                "c) 10-14",
+                "d) 10, 11, 13, 14"
+            ],
+            "correctIndex": 2,
+            "justification": "Należy przetestować każdą wartość graniczną i jej sąsiadów: 10, 11, 12, 13, 14[cite: 6219]."
+        },
+        {
+            "question": "Prawda o testowaniu gałęzi:",
+            "options": [
+                "a) 100% bez testów.",
+                "b) Bezwarunkowe = 100%.",
+                "c) 100% instrukcji = 100% gałęzi.",
+                "d) 100% gałęzi = wszystkie decyzje."
+            ],
+            "correctIndex": 3,
+            "justification": "Pokrycie gałęzi jest tożsame z pokryciem wyników wszystkich decyzji[cite: 6231]."
+        },
+        {
+            "question": "Lista 'best practices' interfejsu to technika:",
+            "options": [
+                "a) Czarnoskrzynkowa.",
+                "b) Eksploracyjna.",
+                "c) Lista kontrolna.",
+                "d) Zgadywanie błędów."
+            ],
+            "correctIndex": 2,
+            "justification": "Sprawdzanie warunków z gotowej, systematycznej listy to testowanie checklistą[cite: 6243]."
+        },
+        {
+            "question": "Wspólne pisanie historyjek:",
+            "options": [
+                "a) Testerzy i deweloperzy.",
+                "b) Biznes, deweloperzy, testerzy razem.",
+                "c) Biznes katuje, reszta sprawdza.",
+                "d) Tylko INVEST."
+            ],
+            "correctIndex": 1,
+            "justification": "To wspólna praca trzech ról (Three Amigos) nad wizją produktu[cite: 6255]."
+        },
+        {
+            "question": "Plan: '100% gałęzi dla modułów krytycznych'. To część:",
+            "options": [
+                "a) Wymiana info.",
+                "b) Ryzyka.",
+                "c) Kontekst.",
+                "d) Podejście."
+            ],
+            "correctIndex": 3,
+            "justification": "Określenie kryteriów wyjścia (staranności) to element podejścia do testów[cite: 6267]."
+        },
+        {
+            "question": "Poker (Runda 3): 13, 8, 13, 13, 13, 8. Jaki krok?",
+            "options": [
+                "a) Właściciel decyduje.",
+                "b) Wybierasz 13 (najwięcej głosów).",
+                "c) Jest konsensus.",
+                "d) Usuwasz funkcję."
+            ],
+            "correctIndex": 1,
+            "justification": "Przy małych rozbieżnościach i braku czasu dopuszczalna jest większość[cite: 6267]."
+        },
+        {
+            "question": "Prawda o piramidzie testów:",
+            "options": [
+                "a) Na dole więcej testów.",
+                "b) Test na dole sprawdza więcej.",
+                "c) To rozkład typów.",
+                "d) Brak wpływu na auto."
+            ],
+            "correctIndex": 0,
+            "justification": "Model zakłada fundament z dużej liczby szybkich testów modułowych[cite: 6281]."
+        },
+        {
+            "question": "Wpływ ryzyka jest b. duży. Prawdopodobieństwo jest:",
+            "options": [
+                "a) Duże.",
+                "b) Małe.",
+                "c) Niezależne.",
+                "d) Nieistotne."
+            ],
+            "correctIndex": 2,
+            "justification": "Prawdopodobieństwo i wpływ to dwa odrębne czynniki oceny ryzyka[cite: 6281]."
+        },
+        {
+            "question": "Ryzyka projektowe to: (i, iv)",
+            "options": [
+                "a) i, iv",
+                "b) iv, v",
+                "c) i, iii",
+                "d) ii, v"
+            ],
+            "correctIndex": 0,
+            "justification": "Braki kadrowe (i) i planowanie to typowe ryzyka projektowe[cite: 6290]."
+        },
+        {
+            "question": "Przykład wpływu analizy ryzyka na staranność testów:",
+            "options": [
+                "a) Codzienny monitor.",
+                "b) Integracja bazy.",
+                "c) Suma rezydualna.",
+                "d) Wysokie ryzyko wydajności = wczesne testy."
+            ],
+            "correctIndex": 3,
+            "justification": "Zwiększenie szczegółowości testów w ryzykownym obszarze to efekt analizy[cite: 6302]."
+        },
+        {
+            "question": "Metryki jakości produktu: (a, d)",
+            "options": [
+                "a) Defekty systemowe.",
+                "b) Nakład designu.",
+                "c) Liczba procedur.",
+                "d) Iloraz błędów / wielkość.",
+                "e) Czas usunięcia."
+            ],
+            "correctIndex": [
+                0,
+                3
+            ],
+            "justification": "Liczba i gęstość defektów świadczą o dojrzałości/jakości kodu[cite: 6302]."
+        },
+        {
+            "question": "Najmniej przydatna informacja dla biznesu w raporcie:",
+            "options": [
+                "a) Przeszkody.",
+                "b) Pokrycie gałęzi.",
+                "c) Postęp.",
+                "d) Ryzyka."
+            ],
+            "correctIndex": 1,
+            "justification": "Pokrycie gałęzi to metryka zbyt techniczna dla interesariuszy biznesowych[cite: 6314]."
+        }
+    ]
+}

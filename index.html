@@ -172,134 +172,182 @@
     </div>
 
     <script>
-        const quizDatabase = {
-            "Zbiór A": [
-                { question: "Która z poniższych odpowiedzi opisuje poprawny cel testów?", options: ["a) Udowodnienie braku defektów.", "b) Udowodnienie braku awarii po wdrożeniu.", "c) Obniżenie poziomu ryzyka i zwiększenie zaufania do jakości.", "d) Sprawdzenie wszystkich kombinacji danych."], correctIndex: 2, justification: "Testowanie pozwala wykryć defekty i awarie, co obniża ryzyko i zwiększa zaufanie. [cite: 5734]" },
-                { question: "Który czynnik ma ISTOTNY wpływ na podejście do testów? (i. Ryzyka produktowe, ii. SDLC, iii. Liczba defektów wcześniej, iv. Wymagania prawne, v. Środowisko)", options: ["a) i oraz ii", "b) i, iii oraz iv", "c) ii, iv oraz v", "d) iii oraz v"], correctIndex: 1, justification: "Ryzyka produktowe, wymagania prawne i historyczne dane o defektach są kluczowe. [cite: 5768]" },
-                { question: "Wytwarzanie sterowane testami akceptacyjnymi (ATDD) polega na:", options: ["a) Pisaniu testów modułowych.", "b) Tworzeniu testów na podstawie kryteriów akceptacji przed kodowaniem.", "c) Testowaniu zachowania systemu przez testerów.", "d) Pisaniu skryptów automatycznych po implementacji."], correctIndex: 1, justification: "W ATDD testy są pisane na podstawie kryteriów akceptacji w ramach projektowania. [cite: 5804]" },
-                { question: "Wskaż DWA zadania przypisane GŁÓWNIE do roli testera:", options: ["a) Konfigurowanie środowiska", "b) Prowadzenie backlogu", "c) Projektowanie rozwiązań", "d) Tworzenie planu testów", "e) Analizowanie podstawy testów"], correctIndex: [0, 4], justification: "Testerzy konfigurują środowisko i wykonują techniczną analizę podstawy testów. [cite: 5768]" }
-                // ... (Uzupełnione o resztę pytań ze zbioru A)
-            ],
-            "Zbiór B": [
-                { question: "Która czynność obejmuje pracę z danymi testowymi, warunkami, środowiskiem i przypadkami?", options: ["a) Projektowanie testów.", "b) Wykonywanie testów.", "c) Analiza testów.", "d) Implementacja testów."], correctIndex: 0, justification: "Projektowanie testów przekształca warunki w przypadki i specyfikuje infrastrukturę. [cite: 179]" },
-                { question: "Śledzenie powiązań (traceability) pozwala na:", options: ["a) Określenie ryzyka rezydualnego.", "b) Mierzenie postępów względem celów biznesowych.", "c) Ocenę umiejętności testerów.", "d) Wybór ryzyk do testowania."], correctIndex: 1, justification: "Powiązanie wymagań z wynikami testów pozwala mierzyć realizację celów biznesowych. [cite: 216]" }
-            ],
-            "Zbiór C": [
-                { question: "Jaka jest główna różnica między testowaniem a debugowaniem?", options: ["a) Testowanie usuwa awarie, debugowanie je wywołuje.", "b) Testowanie jest negatywne, debugowanie pozytywne.", "c) Testowanie stwierdza defekty, debugowanie je lokalizuje i usuwa.", "d) Testowanie znajduje przyczyny, debugowanie skutki."], correctIndex: 2, justification: "Testowanie to sprawdzanie, debugowanie to naprawianie przez programistów. [cite: 772]" }
-            ],
-            "Zbiór D": [
-                { question: "Zasada 'testy ulegają zużyciu' sugeruje, że:", options: ["a) Należy zmieniać przypadki testowe, by znajdować nowe defekty.", "b) Testy po pewnym czasie niszczą środowisko.", "c) Testerzy nudzą się tymi samymi testami.", "d) Oprogramowanie staje się odporne na stare testy."], correctIndex: 0, justification: "Powtarzanie tych samych testów przestaje wykrywać nowe defekty. [cite: 1467]" }
-            ],
-            "Pytania Dodatkowe (Zbiór A)": [
-                { question: "W ramach której czynności powstaje Karta Opisu Testu (Test Charter)?", options: ["a) Planowanie", "b) Monitorowanie", "c) Analiza", "d) Projektowanie"], correctIndex: 3, justification: "Karty opisu testu są produktem projektowania testów dla testowania eksploracyjnego. [cite: 6127]" }
-            ]
-        };
-
-        let currentSet = [];
-        let qIdx = 0;
+        let currentQuizData = [];
+        let currentQuestionIndex = 0;
         let score = 0;
-        let answered = false;
-        let userSelection = [];
+        let hasAnswered = false;
+        let selectedOptions = [];
 
-        window.onload = () => {
+        // Funkcja pobierająca dane z pliku JSON
+        async function loadQuizDatabase() {
             const grid = document.getElementById('sets-grid');
-            for (const name in quizDatabase) {
-                const b = document.createElement('button');
-                b.className = 'btn';
-                b.innerText = name;
-                b.onclick = () => start(name);
-                grid.appendChild(b);
-            }
-        };
+            const subtitle = document.querySelector('.menu-subtitle');
 
-        function start(name) {
-            currentSet = quizDatabase[name];
-            qIdx = 0; score = 0;
-            document.getElementById('menu-section').classList.add('hidden');
-            document.getElementById('quiz-section').classList.remove('hidden');
-            document.getElementById('quiz-title').innerText = name;
-            loadQ();
+            try {
+                // Pobieramy plik z serwera (na GitHub Pages to zadziała bez błędu CORS)
+                const response = await fetch('quiz_data.json');
+                if (!response.ok) throw new Error("Nie znaleziono pliku quiz_data.json");
+
+                const data = await response.json();
+                subtitle.innerText = "Wybierz zestaw pytań, aby rozpocząć darmowy test.";
+                grid.innerHTML = '';
+
+                // Tworzymy przyciski dla każdego zbioru z JSONa
+                for (const [setName, questions] of Object.entries(data)) {
+                    const btn = document.createElement('button');
+                    btn.className = 'btn';
+                    btn.innerText = setName;
+                    btn.onclick = () => startQuiz(setName, questions);
+                    grid.appendChild(btn);
+                }
+
+                // Przycisk MIX (wszystkie pytania razem)
+                const mixBtn = document.createElement('button');
+                mixBtn.className = 'btn';
+                mixBtn.innerText = 'Wszystkie zbiory (Mix)';
+                mixBtn.style.backgroundColor = 'var(--correct-color)';
+                mixBtn.onclick = () => {
+                    let allQuestions = [];
+                    Object.values(data).forEach(qArr => allQuestions = allQuestions.concat(qArr));
+                    startQuiz('Wszystkie zbiory (Mix)', allQuestions);
+                };
+                grid.appendChild(mixBtn);
+
+            } catch (error) {
+                console.error(error);
+                subtitle.innerText = "Błąd: Nie można załadować pytań. Upewnij się, że plik quiz_data.json znajduje się w tym samym folderze na GitHubie.";
+            }
         }
 
-        function loadQ() {
-            answered = false; userSelection = [];
-            const q = currentSet[qIdx];
-            document.getElementById('progress-text').innerText = `Pytanie ${qIdx + 1} / ${currentSet.length}`;
-            document.getElementById('question-text').innerText = q.question;
-            const container = document.getElementById('options-container');
-            container.innerHTML = '';
+        function startQuiz(title, questionsData) {
+            document.getElementById('menu-section').classList.add('hidden');
+            document.getElementById('results-container').classList.add('hidden');
+            document.getElementById('quiz-section').classList.remove('hidden');
+
+            document.getElementById('quiz-title').innerText = title;
+            currentQuizData = questionsData;
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById('total-points').innerText = currentQuizData.length;
+
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            hasAnswered = false;
+            selectedOptions = [];
+            const currentQ = currentQuizData[currentQuestionIndex];
+
+            document.getElementById('progress-text').innerText = `Pytanie ${currentQuestionIndex + 1} / ${currentQuizData.length}`;
+            document.getElementById('question-text').innerText = currentQ.question;
+
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
             document.getElementById('justification-container').classList.add('hidden');
             document.getElementById('next-btn').classList.add('hidden');
 
-            const isMulti = Array.isArray(q.correctIndex);
-            q.options.forEach((opt, i) => {
-                const d = document.createElement('div');
-                d.className = 'option';
-                d.innerText = opt;
-                d.onclick = () => {
-                    if (answered) return;
-                    if (isMulti) {
-                        const pos = userSelection.indexOf(i);
-                        if (pos > -1) { userSelection.splice(pos, 1); d.classList.remove('selected-option'); }
-                        else { userSelection.push(i); d.classList.add('selected-option'); }
-                    } else { checkSingle(i, d); }
+            const isMultiple = Array.isArray(currentQ.correctIndex);
+
+            currentQ.options.forEach((option, index) => {
+                const btn = document.createElement('div');
+                btn.className = 'option';
+                btn.innerText = option;
+
+                btn.onclick = () => {
+                    if (hasAnswered) return;
+                    if (isMultiple) {
+                        const idx = selectedOptions.indexOf(index);
+                        if (idx > -1) {
+                            selectedOptions.splice(idx, 1);
+                            btn.classList.remove('selected-option');
+                        } else {
+                            selectedOptions.push(index);
+                            btn.classList.add('selected-option');
+                        }
+                    } else {
+                        handleOptionClickSingle(index, btn);
+                    }
                 };
-                container.appendChild(d);
+                optionsContainer.appendChild(btn);
             });
 
-            if (isMulti) {
-                const b = document.createElement('button');
-                b.className = 'btn'; b.innerText = 'Zatwierdź wybór';
-                b.style.backgroundColor = '#f59e0b';
-                b.onclick = checkMulti;
-                container.appendChild(b);
+            if (isMultiple) {
+                const confirmBtn = document.createElement('button');
+                confirmBtn.className = 'btn';
+                confirmBtn.innerText = 'Sprawdź odpowiedź';
+                confirmBtn.style.marginTop = '15px';
+                confirmBtn.style.backgroundColor = '#f59e0b';
+                confirmBtn.onclick = handleConfirmMultiple;
+                optionsContainer.appendChild(confirmBtn);
             }
         }
 
-        function checkSingle(i, el) {
-            answered = true;
-            const q = currentSet[qIdx];
-            const opts = document.querySelectorAll('.option');
-            if (i === q.correctIndex) { el.classList.add('correct'); score++; }
-            else { el.classList.add('incorrect'); opts[q.correctIndex].classList.add('correct'); }
-            reveal();
+        function handleOptionClickSingle(selectedIndex, optionElement) {
+            hasAnswered = true;
+            const currentQ = currentQuizData[currentQuestionIndex];
+            const allOptions = document.querySelectorAll('.option');
+
+            if (selectedIndex === currentQ.correctIndex) {
+                optionElement.classList.add('correct');
+                score++;
+            } else {
+                optionElement.classList.add('incorrect');
+                allOptions[currentQ.correctIndex].classList.add('correct');
+            }
+            showJustification();
         }
 
-        function checkMulti() {
-            if (userSelection.length === 0) return;
-            answered = true;
-            const q = currentSet[qIdx];
-            const opts = document.querySelectorAll('.option');
-            let correctCount = 0;
-            userSelection.forEach(idx => {
-                if (q.correctIndex.includes(idx)) { opts[idx].classList.add('correct'); correctCount++; }
-                else { opts[idx].classList.add('incorrect'); }
+        function handleConfirmMultiple() {
+            if (selectedOptions.length === 0) return;
+            hasAnswered = true;
+            const currentQ = currentQuizData[currentQuestionIndex];
+            const allOptions = document.querySelectorAll('.option');
+
+            let isCorrect = true;
+            selectedOptions.forEach(idx => {
+                if (currentQ.correctIndex.includes(idx)) {
+                    allOptions[idx].classList.add('correct');
+                } else {
+                    allOptions[idx].classList.add('incorrect');
+                    isCorrect = false;
+                }
             });
-            q.correctIndex.forEach(idx => { if (!userSelection.includes(idx)) opts[idx].classList.add('correct'); });
-            if (correctCount === q.correctIndex.length && userSelection.length === q.correctIndex.length) score++;
-            reveal();
+
+            currentQ.correctIndex.forEach(idx => {
+                if (!selectedOptions.includes(idx)) {
+                    allOptions[idx].classList.add('correct');
+                    isCorrect = false;
+                }
+            });
+
+            if (isCorrect) score++;
+            showJustification();
         }
 
-        function reveal() {
-            const q = currentSet[qIdx];
-            const j = document.getElementById('justification-container');
-            j.innerHTML = `<strong>Uzasadnienie:</strong><br>${q.justification}`;
-            j.classList.remove('hidden');
-            const n = document.getElementById('next-btn');
-            n.classList.remove('hidden');
-            n.innerText = (qIdx === currentSet.length - 1) ? "Zobacz wyniki" : "Następne pytanie";
+        function showJustification() {
+            const currentQ = currentQuizData[currentQuestionIndex];
+            const justContainer = document.getElementById('justification-container');
+            justContainer.innerHTML = `<strong>Uzasadnienie:</strong><br>${currentQ.justification}`;
+            justContainer.classList.remove('hidden');
+
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.innerText = currentQuestionIndex === currentQuizData.length - 1 ? "Pokaż wyniki" : "Następne pytanie";
+            nextBtn.classList.remove('hidden');
         }
 
         document.getElementById('next-btn').onclick = () => {
-            qIdx++;
-            if (qIdx < currentSet.length) loadQ();
-            else {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < currentQuizData.length) {
+                loadQuestion();
+            } else {
                 document.getElementById('quiz-section').classList.add('hidden');
                 document.getElementById('results-container').classList.remove('hidden');
                 document.getElementById('score-points').innerText = score;
-                document.getElementById('total-points').innerText = currentSet.length;
             }
         };
+
+        // Uruchomienie ładowania bazy przy starcie
+        loadQuizDatabase();
     </script>
 </body>
 
