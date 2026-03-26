@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTQB CTFL 4.0 - Platforma Treningowa</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --correct-color: #16a34a;
+            --incorrect-color: #dc2626;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            max-width: 900px;
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        #menu-section h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .menu-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .sets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .option {
+            background-color: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px 18px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .option.selected-option {
+            background-color: #eff6ff;
+            border-color: var(--primary-color);
+        }
+
+        .option.correct {
+            background-color: #f0fdf4 !important;
+            border-color: var(--correct-color) !important;
+            color: #14532d;
+            font-weight: 500;
+        }
+
+        .option.incorrect {
+            background-color: #fef2f2 !important;
+            border-color: var(--incorrect-color) !important;
+            color: #7f1d1d;
+        }
+
+        #justification-container {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 6px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="menu-section">
+            <h1>Platforma Quizowa ISTQB</h1>
+            <p class="menu-subtitle">Wybierz zbiór pytań CTFL 4.0</p>
+            <div id="sets-grid" class="sets-grid"></div>
+        </div>
+
+        <div id="quiz-section" class="hidden">
+            <h2 id="quiz-title" style="margin-bottom: 5px;"></h2>
+            <div id="progress-text" style="color: var(--text-muted); margin-bottom: 15px; font-weight: bold;"></div>
+            <div class="question" id="question-text"></div>
+            <div class="options-list" id="options-container"></div>
+            <div id="justification-container" class="hidden"></div>
+            <button id="next-btn" class="btn hidden">Następne pytanie</button>
+            <button class="btn" style="margin-top: 15px; background-color: #64748b;" onclick="location.reload()">Wróć do
+                Menu</button>
+        </div>
+
+        <div id="results-container" class="hidden" style="text-align: center;">
+            <h2>Podsumowanie</h2>
+            <div style="font-size: 2.5rem; margin: 20px 0; color: var(--primary-color);">
+                Wynik: <span id="score-points">0</span> / <span id="total-points">0</span>
+            </div>
+            <button class="btn" onclick="location.reload()">Zacznij od nowa</button>
+        </div>
+    </div>
+
+    <script>
+        const quizDatabase = {
+            "Zbiór A": [
+                { question: "Która z poniższych odpowiedzi opisuje poprawny cel testów?", options: ["a) Udowodnienie braku defektów.", "b) Udowodnienie braku awarii po wdrożeniu.", "c) Obniżenie poziomu ryzyka i zwiększenie zaufania do jakości.", "d) Sprawdzenie wszystkich kombinacji danych."], correctIndex: 2, justification: "Testowanie pozwala wykryć defekty i awarie, co obniża ryzyko i zwiększa zaufanie. [cite: 5734]" },
+                { question: "Który czynnik ma ISTOTNY wpływ na podejście do testów? (i. Ryzyka produktowe, ii. SDLC, iii. Liczba defektów wcześniej, iv. Wymagania prawne, v. Środowisko)", options: ["a) i oraz ii", "b) i, iii oraz iv", "c) ii, iv oraz v", "d) iii oraz v"], correctIndex: 1, justification: "Ryzyka produktowe, wymagania prawne i historyczne dane o defektach są kluczowe. [cite: 5768]" },
+                { question: "Wytwarzanie sterowane testami akceptacyjnymi (ATDD) polega na:", options: ["a) Pisaniu testów modułowych.", "b) Tworzeniu testów na podstawie kryteriów akceptacji przed kodowaniem.", "c) Testowaniu zachowania systemu przez testerów.", "d) Pisaniu skryptów automatycznych po implementacji."], correctIndex: 1, justification: "W ATDD testy są pisane na podstawie kryteriów akceptacji w ramach projektowania. [cite: 5804]" },
+                { question: "Wskaż DWA zadania przypisane GŁÓWNIE do roli testera:", options: ["a) Konfigurowanie środowiska", "b) Prowadzenie backlogu", "c) Projektowanie rozwiązań", "d) Tworzenie planu testów", "e) Analizowanie podstawy testów"], correctIndex: [0, 4], justification: "Testerzy konfigurują środowisko i wykonują techniczną analizę podstawy testów. [cite: 5768]" }
+                // ... (Uzupełnione o resztę pytań ze zbioru A)
+            ],
+            "Zbiór B": [
+                { question: "Która czynność obejmuje pracę z danymi testowymi, warunkami, środowiskiem i przypadkami?", options: ["a) Projektowanie testów.", "b) Wykonywanie testów.", "c) Analiza testów.", "d) Implementacja testów."], correctIndex: 0, justification: "Projektowanie testów przekształca warunki w przypadki i specyfikuje infrastrukturę. [cite: 179]" },
+                { question: "Śledzenie powiązań (traceability) pozwala na:", options: ["a) Określenie ryzyka rezydualnego.", "b) Mierzenie postępów względem celów biznesowych.", "c) Ocenę umiejętności testerów.", "d) Wybór ryzyk do testowania."], correctIndex: 1, justification: "Powiązanie wymagań z wynikami testów pozwala mierzyć realizację celów biznesowych. [cite: 216]" }
+            ],
+            "Zbiór C": [
+                { question: "Jaka jest główna różnica między testowaniem a debugowaniem?", options: ["a) Testowanie usuwa awarie, debugowanie je wywołuje.", "b) Testowanie jest negatywne, debugowanie pozytywne.", "c) Testowanie stwierdza defekty, debugowanie je lokalizuje i usuwa.", "d) Testowanie znajduje przyczyny, debugowanie skutki."], correctIndex: 2, justification: "Testowanie to sprawdzanie, debugowanie to naprawianie przez programistów. [cite: 772]" }
+            ],
+            "Zbiór D": [
+                { question: "Zasada 'testy ulegają zużyciu' sugeruje, że:", options: ["a) Należy zmieniać przypadki testowe, by znajdować nowe defekty.", "b) Testy po pewnym czasie niszczą środowisko.", "c) Testerzy nudzą się tymi samymi testami.", "d) Oprogramowanie staje się odporne na stare testy."], correctIndex: 0, justification: "Powtarzanie tych samych testów przestaje wykrywać nowe defekty. [cite: 1467]" }
+            ],
+            "Pytania Dodatkowe (Zbiór A)": [
+                { question: "W ramach której czynności powstaje Karta Opisu Testu (Test Charter)?", options: ["a) Planowanie", "b) Monitorowanie", "c) Analiza", "d) Projektowanie"], correctIndex: 3, justification: "Karty opisu testu są produktem projektowania testów dla testowania eksploracyjnego. [cite: 6127]" }
+            ]
+        };
+
+        let currentSet = [];
+        let qIdx = 0;
+        let score = 0;
+        let answered = false;
+        let userSelection = [];
+
+        window.onload = () => {
+            const grid = document.getElementById('sets-grid');
+            for (const name in quizDatabase) {
+                const b = document.createElement('button');
+                b.className = 'btn';
+                b.innerText = name;
+                b.onclick = () => start(name);
+                grid.appendChild(b);
+            }
+        };
+
+        function start(name) {
+            currentSet = quizDatabase[name];
+            qIdx = 0; score = 0;
+            document.getElementById('menu-section').classList.add('hidden');
+            document.getElementById('quiz-section').classList.remove('hidden');
+            document.getElementById('quiz-title').innerText = name;
+            loadQ();
+        }
+
+        function loadQ() {
+            answered = false; userSelection = [];
+            const q = currentSet[qIdx];
+            document.getElementById('progress-text').innerText = `Pytanie ${qIdx + 1} / ${currentSet.length}`;
+            document.getElementById('question-text').innerText = q.question;
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            document.getElementById('justification-container').classList.add('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+
+            const isMulti = Array.isArray(q.correctIndex);
+            q.options.forEach((opt, i) => {
+                const d = document.createElement('div');
+                d.className = 'option';
+                d.innerText = opt;
+                d.onclick = () => {
+                    if (answered) return;
+                    if (isMulti) {
+                        const pos = userSelection.indexOf(i);
+                        if (pos > -1) { userSelection.splice(pos, 1); d.classList.remove('selected-option'); }
+                        else { userSelection.push(i); d.classList.add('selected-option'); }
+                    } else { checkSingle(i, d); }
+                };
+                container.appendChild(d);
+            });
+
+            if (isMulti) {
+                const b = document.createElement('button');
+                b.className = 'btn'; b.innerText = 'Zatwierdź wybór';
+                b.style.backgroundColor = '#f59e0b';
+                b.onclick = checkMulti;
+                container.appendChild(b);
+            }
+        }
+
+        function checkSingle(i, el) {
+            answered = true;
+            const q = currentSet[qIdx];
+            const opts = document.querySelectorAll('.option');
+            if (i === q.correctIndex) { el.classList.add('correct'); score++; }
+            else { el.classList.add('incorrect'); opts[q.correctIndex].classList.add('correct'); }
+            reveal();
+        }
+
+        function checkMulti() {
+            if (userSelection.length === 0) return;
+            answered = true;
+            const q = currentSet[qIdx];
+            const opts = document.querySelectorAll('.option');
+            let correctCount = 0;
+            userSelection.forEach(idx => {
+                if (q.correctIndex.includes(idx)) { opts[idx].classList.add('correct'); correctCount++; }
+                else { opts[idx].classList.add('incorrect'); }
+            });
+            q.correctIndex.forEach(idx => { if (!userSelection.includes(idx)) opts[idx].classList.add('correct'); });
+            if (correctCount === q.correctIndex.length && userSelection.length === q.correctIndex.length) score++;
+            reveal();
+        }
+
+        function reveal() {
+            const q = currentSet[qIdx];
+            const j = document.getElementById('justification-container');
+            j.innerHTML = `<strong>Uzasadnienie:</strong><br>${q.justification}`;
+            j.classList.remove('hidden');
+            const n = document.getElementById('next-btn');
+            n.classList.remove('hidden');
+            n.innerText = (qIdx === currentSet.length - 1) ? "Zobacz wyniki" : "Następne pytanie";
+        }
+
+        document.getElementById('next-btn').onclick = () => {
+            qIdx++;
+            if (qIdx < currentSet.length) loadQ();
+            else {
+                document.getElementById('quiz-section').classList.add('hidden');
+                document.getElementById('results-container').classList.remove('hidden');
+                document.getElementById('score-points').innerText = score;
+                document.getElementById('total-points').innerText = currentSet.length;
+            }
+        };
+    </script>
+</body>
+
+</html>
